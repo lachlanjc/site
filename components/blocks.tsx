@@ -1,17 +1,20 @@
-import { Box, Card } from 'theme-ui'
+import { Box, BoxProps, Card } from 'theme-ui'
 import Image from 'next/image'
 
-export const Container = ({ wide, ...props }) => (
+export const Container = ({
+  wide,
+  ...props
+}: BoxProps & { wide?: boolean }) => (
   <Box
     {...props}
     variant="container"
     sx={{
-      maxWidth: wide ? 'wide' : 'container'
+      maxWidth: wide ? 'wide' : 'container',
     }}
   />
 )
 
-export const Tiles = props => (
+export const Tiles = (props) => (
   <Box
     as="section"
     {...props}
@@ -20,12 +23,22 @@ export const Tiles = props => (
       gridGap: [3, null, 4],
       gridTemplateColumns: [null, 'repeat(2, 1fr)'],
       mx: [-3, 0, -4],
-      ...props.sx
+      ...props.sx,
     }}
   />
 )
 
-export const Tile = ({ href, id, alt, children }) => (
+export const Tile = ({
+  href,
+  id,
+  alt,
+  children,
+}: {
+  href: string
+  id: string
+  alt: string
+  children?: any
+}) => (
   <Card
     variant="interactive"
     as="a"
@@ -35,14 +48,10 @@ export const Tile = ({ href, id, alt, children }) => (
       bg: 'elevated',
       color: 'elevatedText',
       borderRadius: [0, 'extra'],
-      p: [0, 0]
-    }}>
-    <Image
-      src={`/projects/${id}.jpg`}
-      width={2048}
-      height={1024}
-      alt={alt}
-    />
+      p: [0, 0],
+    }}
+  >
+    <Image src={`/projects/${id}.jpg`} width={2048} height={1024} alt={alt} />
     <Box
       sx={{
         p: [3, null, 4],
@@ -53,20 +62,21 @@ export const Tile = ({ href, id, alt, children }) => (
           lineHeight: 'heading',
           a: {
             color: 'inherit',
-            textDecoration: 'none'
-          }
+            textDecoration: 'none',
+          },
         },
         '> p': {
           color: 'inherit',
           my: 0,
-        }
-      }}>
+        },
+      }}
+    >
       {children}
     </Box>
   </Card>
 )
 
-export const List = props => (
+export const List = (props) => (
   <Box
     {...props}
     sx={{
@@ -76,23 +86,23 @@ export const List = props => (
         listStyle: 'none',
         display: 'grid',
         gridTemplateColumns: [null, 'repeat(auto-fit, minmax(256px, 1fr))'],
-        gridGap: [3, 4]
+        gridGap: [3, 4],
       },
       a: {
         display: 'block',
         fontWeight: 'bold',
         color: 'accent',
         textDecoration: 'none',
-        fontSize: 2
+        fontSize: 2,
       },
       em: {
         display: 'block',
         color: 'muted',
         fontWeight: 'body',
         fontStyle: 'normal',
-        fontSize: 1
+        fontSize: 1,
       },
-      ...props.sx
+      ...props.sx,
     }}
   />
 )

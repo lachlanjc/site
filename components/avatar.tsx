@@ -1,6 +1,6 @@
 import { Avatar } from 'theme-ui'
 
-const Component = props => (
+const Component = (props) => (
   <Avatar
     {...props}
     src="https://github.com/lachlanjc.png"

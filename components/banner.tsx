@@ -13,7 +13,7 @@ const Banner = ({ children }) => (
       maxHeight: '768px',
       overflowY: 'visible',
       py: [5, 6],
-      mb: 0
+      mb: 0,
     }}
   >
     <BGImg
@@ -35,10 +35,10 @@ const Banner = ({ children }) => (
           justifyContent: 'center',
           alignItems: 'center',
           p: 0,
-          m: 0
+          m: 0,
         },
         li: {
-          mr: [3, 4]
+          mr: [3, 4],
         },
         a: {
           display: 'inline-block',
@@ -46,9 +46,9 @@ const Banner = ({ children }) => (
           transition: 'transform .125s ease-in-out',
           transform: 'none',
           ':hover': {
-            transform: 'scale(1.125) rotate(-4deg)'
-          }
-        }
+            transform: 'scale(1.125) rotate(-4deg)',
+          },
+        },
       }}
     >
       <Slide>
@@ -58,7 +58,7 @@ const Banner = ({ children }) => (
             fontFamily: 'display',
             fontSize: [6, 7],
             mt: 0,
-            mb: 3
+            mb: 3,
           }}
         >
           Hey, I’m
@@ -76,8 +76,8 @@ const Banner = ({ children }) => (
             textShadow: 'none',
             ':hover': {
               bg: 'lilac',
-              transform: 'scale(1.25) rotate(-356deg)'
-            }
+              transform: 'scale(1.25) rotate(-356deg)',
+            },
           }}
         >
           they/them
@@ -91,11 +91,12 @@ const Banner = ({ children }) => (
             lineHeight: 'body',
             fontSize: [3, 4],
             fontWeight: 'normal',
-            a: { fontWeight: 'bold' }
+            a: { fontWeight: 'bold' },
           }}
         >
           I’m a web designer-developer & hacktivist.
-          <br />NYU&nbsp;’24, studying Interactive Media&nbsp;Arts.
+          <br />
+          NYU&nbsp;’24, studying Interactive Media&nbsp;Arts.
         </Text>
         {children}
       </Slide>
