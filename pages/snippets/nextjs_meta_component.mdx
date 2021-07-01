@@ -1,0 +1,117 @@
+# Next.js meta component
+
+[Next.js `Head` component](https://nextjs.org/docs/api-reference/next/head)
+
+```js title=components/meta.js
+import Head from 'next/head'
+
+const color = '#111'
+
+const makeTitle = (title, name) =>
+  title === name ? title : `${title} – ${name}`
+
+const Meta = ({
+  title = 'SITE NAME',
+  name = 'SITE NAME',
+  description = 'DEFAULT DESCRIPTION',
+  image = 'https://YOURDOMAIN.com/card.jpg',
+  url = 'https://YOURDOMAIN.com',
+  children
+}) => (
+  <Head>
+    <meta key="og_locale" property="og:locale" content="en_US" />
+    <meta key="og_type" property="og:type" content="website" />
+    <meta key="og_site" property="og:site_name" content={name} />
+    <title key="title">{makeTitle(title, name)}</title>
+    <meta key="og_title" property="og:title" content={makeTitle(title, name)} />
+    <meta
+      key="tw_title"
+      name="twitter:title"
+      content={makeTitle(title, name)}
+    />
+    {description && (
+      <>
+        <meta key="desc" name="description" content={description} />
+        <meta key="og_desc" property="og:description" content={description} />
+        <meta key="tw_desc" name="twitter:description" content={description} />
+      </>
+    )}
+    {image && (
+      <>
+        <meta key="og_img" property="og:image" content={image} />
+        <meta key="tw_card" name="twitter:card" content="summary_large_image" />
+        <meta key="tw_img" name="twitter:image" content={image} />
+      </>
+    )}
+    <meta key="theme_color" name="theme-color" content={color} />
+    <meta
+      key="tile_color"
+      name="msapplication-TileColor"
+      content={color}
+    />
+    <link
+      key="safari_icon"
+      rel="mask-icon"
+      href={`${url}/safari-pinned-tab.png`}
+      color={color}
+    />
+    <link
+      key="apple_icon"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href={`${url}/apple-touch-icon.png`}
+    />
+    <link
+      key="favicon_32"
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href={`${url}/favicon-32x32.png`}
+    />
+    <link
+      key="favicon_16"
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href={`${url}/favicon-16x16.png`}
+    />
+    <link key="manifest" rel="manifest" href={`${url}/site.webmanifest`} />
+    {children}
+  </Head>
+)
+
+export default Meta
+```
+
+## Generating social cards
+
+I’ve written twice about building custom services to generate social card images:
+
+- [Shareable Profiles for gunfunded.com](https://notebook.lachlanjc.com/2019-12-11_shareable_profiles_for_gun_funded/)
+- [Custom Social Card Services](https://notebook.lachlanjc.com/2019-11-05_custom_social_card_services/)
+
+If you’re looking to design your own, I recommend making a `1080x542` artboard in a design app like [Figma](https://figma.com).
+
+For my recent site [centresustains.com](https://centresustains.com), I designed 4 social cards:
+
+![Screenshot of Figma artboard](https://cloud-es3j7x4iu.vercel.app/2021-01-13_pcq69tcnk1cf0n73mgmbpmv3b38nzaeq.jpeg)
+
+The first one is the default: it’s used on the homepage, as well as all the pages that aren’t significant/shareable enough to warrant designing a custom card for. This is super easy
+
+I also open sourced [the Figma file for all of hackclub.com’s social cards](https://www.figma.com/community/file/893175670263875798).
+
+## Generating favicons
+
+Favicons are the absolute worst, but without them, your site looks unfinished/unprofessional.
+The saving grace of favicons is the aptly-named [realfavicongenerator.net](https://realfavicongenerator.net),
+to which you can upload a full-res image & it gives you a bundle of all the images you need.
+The component above is set up to use the files as named by realfavicongenerator.net.
+
+In addition to your standard, high-res favicon
+
+Some of the options you likely want are a bit hidden. I usually turn on one of the compression options,
+as well as evaluate the different scaling options (“Lanczos” usually works best in my experience):
+
+![Screenshot of realfavicongenerator’s scaling options with the getnoodl.es favicon](https://cloud-mmqboogck.vercel.app/2021-01-13_5x8w9w5mg6b7yz8y6dcvudg5wy1w577f.jpeg)
+
+
