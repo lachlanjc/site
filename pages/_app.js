@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'theme-ui'
 import Meta from '../components/meta'
-import theme from '../components/theme'
+import theme from '../lib/theme'
 import '../public/fonts.css'
 
 const App = ({ Component, pageProps }) => {
