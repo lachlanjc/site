@@ -43,7 +43,6 @@ const Banner = ({ children }) => (
           display: 'inline-block',
           color: 'white',
           transition: 'transform .125s ease-in-out',
-          transform: 'none',
           ':hover': {
             transform: 'scale(1.125) rotate(-4deg)'
           }
@@ -93,9 +92,19 @@ const Banner = ({ children }) => (
             a: { fontWeight: 'bold' }
           }}
         >
-          I’m a web designer-developer & hacktivist.
+          I’m a web designer-developer & hacktivist
           <br />
-          NYU&nbsp;’24, studying Interactive Media&nbsp;Arts.
+          working on climate at{' '}
+          <a
+            href="https://watershedclimate.com"
+            target="_blank"
+            rel="norefferer"
+          >
+            Watershed
+          </a>
+          .
+          <br />
+          On leave from NYU Interactive Media&nbsp;Arts.
         </Text>
         {children}
       </Slide>
