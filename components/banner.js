@@ -70,7 +70,8 @@ const Banner = ({ children }) => (
             transform: 'rotate(-4deg)',
             fontSize: [3, 4],
             px: 3,
-            transition: 'all .125s ease-in-out',
+            transition: '.125s ease-in-out',
+            transitionProperty: 'background-color, transform',
             textShadow: 'none',
             ':hover': {
               bg: 'lilac',
