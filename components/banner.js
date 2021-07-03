@@ -1,6 +1,7 @@
 import { Flex, Container, Heading, Badge, Text } from 'theme-ui'
 import BGImg from './bg-img'
 import Slide from './slide-up'
+import bannerImg from '../public/banner.jpg'
 
 const Banner = ({ children }) => (
   <Flex
@@ -17,9 +18,7 @@ const Banner = ({ children }) => (
     }}
   >
     <BGImg
-      src="https://cdn.glitch.com/4d99d0f7-c364-44a5-b1b9-2c3c3f5cb333%2F_DSC1474.jpeg?v=1582521162110"
-      width={1520}
-      height={1016}
+      src={bannerImg}
       alt="Close-up of Lachlan's face with lipstick on & satin red gloved hands covering the eyes"
     />
     <Container
@@ -95,7 +94,8 @@ const Banner = ({ children }) => (
           }}
         >
           I’m a web designer-developer & hacktivist.
-          <br />NYU&nbsp;’24, studying Interactive Media&nbsp;Arts.
+          <br />
+          NYU&nbsp;’24, studying Interactive Media&nbsp;Arts.
         </Text>
         {children}
       </Slide>
