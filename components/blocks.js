@@ -17,7 +17,7 @@ export const Tiles = props => (
     {...props}
     sx={{
       display: 'grid',
-      gridGap: [3, null, 4],
+      gridGap: 4,
       gridTemplateColumns: [null, 'repeat(2, 1fr)'],
       mx: [-3, 0, -4],
       ...props.sx
@@ -36,13 +36,9 @@ export const Tile = ({ href, id, alt, children }) => (
       color: 'elevatedText',
       borderRadius: [0, 'extra'],
       p: [0, 0]
-    }}>
-    <Image
-      src={`/projects/${id}.jpg`}
-      width={2048}
-      height={1024}
-      alt={alt}
-    />
+    }}
+  >
+    <Image src={`/projects/${id}.jpg`} width={2048} height={1024} alt={alt} />
     <Box
       sx={{
         p: [3, null, 4],
@@ -58,9 +54,10 @@ export const Tile = ({ href, id, alt, children }) => (
         },
         '> p': {
           color: 'inherit',
-          my: 0,
+          my: 0
         }
-      }}>
+      }}
+    >
       {children}
     </Box>
   </Card>

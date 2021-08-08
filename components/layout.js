@@ -75,10 +75,10 @@ export const Footer = () => (
     as="footer"
     sx={{
       display: 'flex',
+      gap: 3,
       alignItems: 'center',
-      justifyContent: 'center',
       py: [3, 4, 5],
-      a: { color: 'primary', mx: 2 }
+      a: { color: 'primary' }
     }}
   >
     <Avatar size={48} sx={{ height: 48, mr: 3 }} />
@@ -106,12 +106,12 @@ export const Footer = () => (
 )
 
 const colors = {
-  red: '#ec3750',
-  orange: '#ff8c37',
-  yellow: '#f1c40f',
-  green: '#33d6a6',
-  cyan: '#5bc0de',
-  blue: '#338eda'
+  red: '#d21718',
+  orange: '#f67f3f',
+  yellow: '#fac701',
+  green: '#55d39d',
+  blue: '#1870c3',
+  purple: '#4d1866'
 }
 
 export const Rainbow = () => (
@@ -120,7 +120,7 @@ export const Rainbow = () => (
       width: '100%',
       height: '4rem',
       display: 'block',
-      backgroundImage: `linear-gradient(${colors.red} 0%, ${colors.red} 16.6666%, ${colors.orange} 16.6666%, ${colors.orange} 33.333%, ${colors.yellow} 33.333%, ${colors.yellow} 50%, ${colors.green} 50%, ${colors.green} 66.6666%, ${colors.blue} 66.6666%, ${colors.blue} 83.3333%, #8067C3 83.3333%, #8067C3 100%)`
+      backgroundImage: `linear-gradient(${colors.red} 0%, ${colors.red} 16.6666%, ${colors.orange} 16.6666%, ${colors.orange} 33.333%, ${colors.yellow} 33.333%, ${colors.yellow} 50%, ${colors.green} 50%, ${colors.green} 66.6666%, ${colors.blue} 66.6666%, ${colors.blue} 83.3333%, ${colors.purple} 83.3333%, ${colors.purple} 100%)`
     }}
   />
 )

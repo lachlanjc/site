@@ -1,14 +1,13 @@
 import { Flex, Container, Heading, Badge, Text } from 'theme-ui'
 import BGImg from './bg-img'
 import Slide from './slide-up'
-import bannerImg from '../public/banner.jpg'
+import bannerImg from '../public/banner_lake2.jpeg'
 
 const Banner = ({ children }) => (
   <Flex
     as="header"
     sx={{
       flexDirection: 'column',
-      justifyContent: 'center',
       color: 'white',
       minHeight: 'fit-content',
       height: '100vh',
@@ -21,12 +20,12 @@ const Banner = ({ children }) => (
     <BGImg
       src={bannerImg}
       alt="Close-up of Lachlan's face with lipstick on & satin red gloved hands covering the eyes"
+      gradient="to left, rgba(0,0,0,0) 50%, rgba(0,0,0,0.375)"
     />
     <Container
       variant="copyPlus"
       sx={{
-        px: 3,
-        textAlign: 'center',
+        px: [3, 4, 5],
         textShadow:
           '0 1px 2px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.25)',
         ul: {
@@ -37,9 +36,6 @@ const Banner = ({ children }) => (
           p: 0,
           m: 0
         },
-        li: {
-          mr: [3, 4]
-        },
         a: {
           display: 'inline-block',
           color: 'white',
@@ -47,7 +43,9 @@ const Banner = ({ children }) => (
           ':hover': {
             transform: 'scale(1.125) rotate(-4deg)'
           }
-        }
+        },
+        img: { display: 'none' },
+        footer: { pl: '0 !important' }
       }}
     >
       <Slide>
@@ -67,7 +65,7 @@ const Banner = ({ children }) => (
         <Badge
           variant="pill"
           sx={{
-            bg: 'primary',
+            bg: 'yellow',
             transform: 'rotate(-4deg)',
             fontSize: [3, 4],
             px: 3,
@@ -75,39 +73,34 @@ const Banner = ({ children }) => (
             transitionProperty: 'background-color, transform',
             textShadow: 'none',
             ':hover': {
-              bg: 'lilac',
+              bg: 'primary',
               transform: 'scale(1.25) rotate(-356deg)'
             }
           }}
         >
           they/them
         </Badge>
-        <Text
-          as="p"
-          variant="headline"
-          sx={{
-            mt: [3, 4, 5],
-            mb: [4, 5],
-            mx: 'auto',
-            maxWidth: '30ch',
-            lineHeight: 'body',
-            fontSize: [3, 4],
-            fontWeight: 'normal',
-            a: { fontWeight: 'bold' }
-          }}
-        >
-          I’m a web designer-developer & hacktivist working on climate at{' '}
-          <a
-            href="https://watershedclimate.com"
-            target="_blank"
-            rel="norefferer"
-          >
-            Watershed
-          </a>
-          . On&nbsp;leave from NYU Interactive Media&nbsp;Arts.
-        </Text>
-        {children}
       </Slide>
+      <Text
+        as="p"
+        variant="headline"
+        sx={{
+          mt: [3, 4, 5],
+          mb: [4, 5],
+          maxWidth: '30ch',
+          lineHeight: 'caption',
+          fontSize: [3, 4],
+          fontWeight: 'normal',
+          a: { fontWeight: 'bold' }
+        }}
+      >
+        I’m a web designer-developer & hacktivist reducing carbon emissions at{' '}
+        <a href="https://watershedclimate.com" target="_blank" rel="noreferrer">
+          Watershed
+        </a>
+        . On&nbsp;leave from NYU Interactive Media&nbsp;Arts.
+      </Text>
+      {children}
     </Container>
   </Flex>
 )
