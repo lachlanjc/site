@@ -10,7 +10,8 @@ const Banner = ({ children }) => (
       flexDirection: 'column',
       justifyContent: 'center',
       color: 'white',
-      minHeight: '100vh',
+      minHeight: 'fit-content',
+      height: '100vh',
       maxHeight: '768px',
       overflowY: 'visible',
       py: [5, 6],
@@ -87,15 +88,15 @@ const Banner = ({ children }) => (
           sx={{
             mt: [3, 4, 5],
             mb: [4, 5],
+            mx: 'auto',
+            maxWidth: '30ch',
             lineHeight: 'body',
             fontSize: [3, 4],
             fontWeight: 'normal',
             a: { fontWeight: 'bold' }
           }}
         >
-          I’m a web designer-developer & hacktivist
-          <br />
-          working on climate at{' '}
+          I’m a web designer-developer & hacktivist working on climate at{' '}
           <a
             href="https://watershedclimate.com"
             target="_blank"
@@ -103,9 +104,7 @@ const Banner = ({ children }) => (
           >
             Watershed
           </a>
-          .
-          <br />
-          On leave from NYU Interactive Media&nbsp;Arts.
+          . On&nbsp;leave from NYU Interactive Media&nbsp;Arts.
         </Text>
         {children}
       </Slide>
