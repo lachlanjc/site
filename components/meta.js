@@ -7,8 +7,8 @@ const Meta = ({
   name = 'Lachlan Campbell', // site name
   title = '@lachlanjc', // page title
   description = 'Web designer-developer, currently working on climate at Watershed in San Francisco. NYU ’24, Interactive Media Arts. they/them',
-  image = 'https://cdn.glitch.com/4d99d0f7-c364-44a5-b1b9-2c3c3f5cb333%2Fcard.png?v=1582524337857',
-  color = '#ff2467'
+  image = 'https://lachlanjc.com/card.jpg',
+  color = '#ffaf26'
 }) => (
   <Head>
     <meta key="og_type" property="og:type" content="website" />
