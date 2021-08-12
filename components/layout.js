@@ -4,7 +4,8 @@ import {
   Container,
   IconButton,
   NavLink,
-  useColorMode
+  useColorMode,
+  useThemeUI
 } from 'theme-ui'
 import Link from 'next/link'
 import Icon from './icon'
@@ -105,25 +106,28 @@ export const Footer = () => (
   </Container>
 )
 
-const colors = {
-  red: '#ec3750',
-  orange: '#ff8c37',
-  yellow: '#f1c40f',
-  green: '#33d6a6',
-  cyan: '#5bc0de',
-  blue: '#338eda'
-}
 
-export const Rainbow = () => (
+export const Rainbow = () => {
+  const colors = {
+    pinkWash:'#FFCCCC',
+  red:'#FF3801',
+    orange: '#FF9400',
+    yellow:'#FFC800',
+    green:'#00BF3A',
+    teal:'#05CF9C',
+  blue:'#0068FF',
+    magenta:'#FA97FF'
+  }
+  return (
   <Box
     sx={{
       width: '100%',
       height: '4rem',
       display: 'block',
-      backgroundImage: `linear-gradient(${colors.red} 0%, ${colors.red} 16.6666%, ${colors.orange} 16.6666%, ${colors.orange} 33.333%, ${colors.yellow} 33.333%, ${colors.yellow} 50%, ${colors.green} 50%, ${colors.green} 66.6666%, ${colors.blue} 66.6666%, ${colors.blue} 83.3333%, #8067C3 83.3333%, #8067C3 100%)`
+      backgroundImage: `linear-gradient(${colors.red} 0%, ${colors.red} 16.6666%, ${colors.orange} 16.6666%, ${colors.orange} 33.333%, ${colors.yellow} 33.333%, ${colors.yellow} 50%, ${colors.green} 50%, ${colors.green} 66.6666%, ${colors.blue} 66.6666%, ${colors.blue} 83.3333%, ${colors.magenta} 83.3333%, ${colors.magenta} 100%)`
     }}
   />
-)
+)}
 
 const Layout = props => (
   <>
