@@ -34,7 +34,7 @@ export const Tile = ({ href, id, alt, children }) => (
     sx={{
       bg: 'elevated',
       color: 'elevatedText',
-      borderRadius: [0, 'extra'],
+      borderRadius: 'clamp(0px, ((100vw - 4px) - 100%) * 9999, 12px)',
       p: [0, 0]
     }}
   >
