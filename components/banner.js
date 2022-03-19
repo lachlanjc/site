@@ -1,7 +1,7 @@
 import { Flex, Container, Heading, Badge, Text } from 'theme-ui'
 import BGImg from './bg-img'
 import Slide from './slide-up'
-import bannerImg from '../public/banner_lake2.jpeg'
+import bannerImg from '../public/banner_warm.jpg'
 
 const Banner = ({ children }) => (
   <Flex
@@ -19,8 +19,7 @@ const Banner = ({ children }) => (
   >
     <BGImg
       src={bannerImg}
-      alt="Close-up of Lachlan's face with lipstick on & satin red gloved hands covering the eyes"
-      gradient="to left, rgba(0,0,0,0) 50%, rgba(0,0,0,0.375)"
+      alt="Horizontal portrait of Lachlan in a black and white cropped turtleneck laying down looking off camera"
     />
     <Container
       variant="copyPlus"
