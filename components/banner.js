@@ -90,14 +90,15 @@ const Banner = ({ children }) => (
           lineHeight: 'caption',
           fontSize: [3, 4],
           fontWeight: 'normal',
+          fontFeatureSettings: '"ss02"',
           a: { fontWeight: 'bold' }
         }}
       >
-        I’m a web designer-developer & hacktivist reducing carbon emissions at{' '}
-        <a href="https://watershedclimate.com" target="_blank" rel="noreferrer">
+        I’m a web designer-developer reducing carbon emissions at{' '}
+        <a href="https://watershed.com" target="_blank" rel="noreferrer">
           Watershed
         </a>
-        . On&nbsp;leave from NYU Interactive Media&nbsp;Arts.
+        . On&nbsp;leave, NYU Interactive Media&nbsp;Arts.
       </Text>
       {children}
     </Container>
