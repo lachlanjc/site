@@ -54,15 +54,18 @@ export const Header = () => (
       gap: [3, 4]
     }}
   >
-    <NavLink href="https://notebook.lachlanjc.com" target="_blank">
-      Notebook
-    </NavLink>
+    <Link href="/#work" passHref>
+      <NavLink>Work</NavLink>
+    </Link>
     <Link href="/about" passHref>
       <NavLink>Bio</NavLink>
     </Link>
     <Link href="/resume" passHref>
-      <NavLink>Résumé</NavLink>
+      <NavLink>CV</NavLink>
     </Link>
+    <NavLink href="https://notebook.lachlanjc.com">
+      Notebook
+    </NavLink>
     <Box sx={{ mx: 'auto' }} />
     <ColorButton
       onClick={e => {
