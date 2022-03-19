@@ -57,6 +57,9 @@ export const Header = () => (
     <NavLink href="https://notebook.lachlanjc.com" target="_blank">
       Notebook
     </NavLink>
+    <Link href="/about" passHref>
+      <NavLink>Bio</NavLink>
+    </Link>
     <Link href="/resume" passHref>
       <NavLink>Résumé</NavLink>
     </Link>
