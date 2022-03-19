@@ -1,7 +1,7 @@
 import { Flex, Container, Heading, Badge, Text } from "theme-ui";
 import BGImg from "./bg-img";
 import Slide from "./slide-up";
-import bannerImg from "../public/banner_warm.jpeg";
+import bannerImg from "../public/banner_warm.jpg";
 
 const Banner = ({ children }) => (
   <Flex
