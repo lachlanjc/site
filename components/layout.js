@@ -51,7 +51,7 @@ export const Header = () => (
       alignItems: 'center',
       px: 3,
       py: [3, 4],
-      'a + a': { mx: [3, 4] }
+      gap: [3, 4]
     }}
   >
     <NavLink href="https://notebook.lachlanjc.com" target="_blank">
@@ -78,10 +78,10 @@ export const Footer = () => (
       gap: 3,
       alignItems: 'center',
       py: [3, 4, 5],
-      a: { color: 'primary' }
+      a: { color: 'yellow' }
     }}
   >
-    <Avatar size={48} sx={{ height: 48, mr: 3 }} />
+    <Avatar size={48} sx={{ height: 48 }} />
     <NavLink
       href="https://twitter.com/lachlanjc"
       title="Twitter"

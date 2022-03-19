@@ -11,7 +11,6 @@ const Banner = ({ children }) => (
       color: 'white',
       minHeight: 'fit-content',
       height: '100vh',
-      aspectRatio: [null, null, '3 / 2'],
       py: 5,
       pt: [null, 6],
       mb: 0
