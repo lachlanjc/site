@@ -54,7 +54,8 @@ export const Tile = ({ href, id, alt, children }) => (
         },
         '> p': {
           color: 'inherit',
-          my: 0
+          my: 0,
+          fontFeatureSettings: '"ss02"'
         }
       }}
     >
@@ -87,7 +88,8 @@ export const List = props => (
         color: 'muted',
         fontWeight: 'body',
         fontStyle: 'normal',
-        fontSize: 1
+        fontSize: 1,
+        fontFeatureSettings: '"ss02"'
       },
       ...props.sx
     }}
