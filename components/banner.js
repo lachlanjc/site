@@ -1,7 +1,7 @@
 import { Flex, Container, Heading, Badge, Text } from 'theme-ui'
 import BGImg from './bg-img'
 import Slide from './slide-up'
-import bannerImg from '../public/banner_lake2.jpeg'
+import bannerImg from '../public/banner_warm.jpg'
 
 const Banner = ({ children }) => (
   <Flex
@@ -11,16 +11,14 @@ const Banner = ({ children }) => (
       color: 'white',
       minHeight: 'fit-content',
       height: '100vh',
-      maxHeight: '768px',
-      overflowY: 'visible',
-      py: [5, 6],
+      py: 5,
+      pt: [null, 6],
       mb: 0
     }}
   >
     <BGImg
       src={bannerImg}
-      alt="Close-up of Lachlan's face with lipstick on & satin red gloved hands covering the eyes"
-      gradient="to left, rgba(0,0,0,0) 50%, rgba(0,0,0,0.375)"
+      alt="Horizontal portrait of Lachlan in a black and white cropped turtleneck laying down looking off camera"
     />
     <Container
       variant="copyPlus"
@@ -91,14 +89,15 @@ const Banner = ({ children }) => (
           lineHeight: 'caption',
           fontSize: [3, 4],
           fontWeight: 'normal',
+          fontFeatureSettings: '"ss02"',
           a: { fontWeight: 'bold' }
         }}
       >
-        I’m a web designer-developer & hacktivist reducing carbon emissions at{' '}
-        <a href="https://watershedclimate.com" target="_blank" rel="noreferrer">
+        I’m a web designer-developer reducing carbon emissions at{' '}
+        <a href="https://watershed.com" target="_blank" rel="noreferrer">
           Watershed
         </a>
-        . On&nbsp;leave from NYU Interactive Media&nbsp;Arts.
+        . On&nbsp;leave, NYU Interactive Media&nbsp;Arts.
       </Text>
       {children}
     </Container>

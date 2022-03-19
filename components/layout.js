@@ -51,15 +51,21 @@ export const Header = () => (
       alignItems: 'center',
       px: 3,
       py: [3, 4],
-      'a + a': { mx: [3, 4] }
+      gap: [3, 4]
     }}
   >
-    <NavLink href="https://notebook.lachlanjc.com" target="_blank">
+    <Link href="/#work" passHref>
+      <NavLink>Work</NavLink>
+    </Link>
+    <Link href="/about" passHref>
+      <NavLink>Bio</NavLink>
+    </Link>
+    <Link href="/resume" passHref>
+      <NavLink>CV</NavLink>
+    </Link>
+    <NavLink href="https://notebook.lachlanjc.com">
       Notebook
     </NavLink>
-    <Link href="/resume" passHref>
-      <NavLink>Résumé</NavLink>
-    </Link>
     <Box sx={{ mx: 'auto' }} />
     <ColorButton
       onClick={e => {
@@ -78,10 +84,10 @@ export const Footer = () => (
       gap: 3,
       alignItems: 'center',
       py: [3, 4, 5],
-      a: { color: 'primary' }
+      a: { color: 'yellow' }
     }}
   >
-    <Avatar size={48} sx={{ height: 48, mr: 3 }} />
+    <Avatar size={48} sx={{ height: 48 }} />
     <NavLink
       href="https://twitter.com/lachlanjc"
       title="Twitter"
