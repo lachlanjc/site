@@ -11,9 +11,9 @@ const Banner = ({ children }) => (
       color: 'white',
       minHeight: 'fit-content',
       height: '100vh',
-      maxHeight: '768px',
-      overflowY: 'visible',
-      py: [5, 6],
+      aspectRatio: [null, null, '3 / 2'],
+      py: 5,
+      pt: [null, 6],
       mb: 0
     }}
   >
