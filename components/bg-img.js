@@ -7,7 +7,7 @@ import Image from 'next/image'
  * then pass width/height/alt/src as usual
  */
 
-const gx = gradient =>
+const gx = (gradient) =>
   gradient
     ? {
         '&:after': {
@@ -33,7 +33,7 @@ const BGImg = ({ gradient, ...props }) => (
       width: '100%',
       height: '100%',
       ...gx(gradient),
-      '> div': { height: '100%', width: '100%' },
+      '> span': { height: '100% !important', width: '100%' },
       '~ *': { position: 'relative' }
     }}
   >

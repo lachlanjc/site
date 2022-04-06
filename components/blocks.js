@@ -11,7 +11,7 @@ export const Container = ({ wide, ...props }) => (
   />
 )
 
-export const Tiles = props => (
+export const Tiles = (props) => (
   <Box
     as="section"
     {...props}
@@ -19,7 +19,7 @@ export const Tiles = props => (
       display: 'grid',
       gridGap: 4,
       gridTemplateColumns: [null, 'repeat(2, 1fr)'],
-      mx: [-3, 0, -4],
+      mx: [-3, 0, null, null, -4],
       ...props.sx
     }}
   />
@@ -64,7 +64,7 @@ export const Tile = ({ href, id, alt, children }) => (
   </Card>
 )
 
-export const List = props => (
+export const List = (props) => (
   <Box
     {...props}
     sx={{

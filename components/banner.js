@@ -9,8 +9,9 @@ const Banner = ({ children }) => (
     sx={{
       flexDirection: 'column',
       color: 'white',
-      minHeight: 'fit-content',
-      height: '100vh',
+      minHeight: '100vh',
+      overflow: 'hidden',
+      position: 'relative',
       py: 5,
       pt: [null, 6],
       mb: 0
