@@ -10,16 +10,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/styled": "^11.8.1",
-    "@emotion/react": "^11.8.1",
+    "@emotion/react": "^11.8.2",
     "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^12.1.0",
+    "@next/mdx": "^12.1.4",
     "lodash": "^4.17.21",
-    "next": "^12.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "next": "^12.1.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "supercons": "^0.0.1",
-    "theme-ui": "^0.13.0"
+    "theme-ui": "^0.14.2"
   },
   "glitch": {
     "projectType": "generated_static"
