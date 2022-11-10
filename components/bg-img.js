@@ -38,9 +38,8 @@ const BGImg = ({ gradient, ...props }) => (
     }}
   >
     <Image
-      layout="responsive"
-      objectFit="cover"
-      objectPosition="center"
+      fill
+      style={{ objectFit: 'cover', objectPosition: 'center' }}
       placeholder="blur"
       {...props}
     />
