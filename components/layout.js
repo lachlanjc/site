@@ -55,12 +55,11 @@ export const Header = () => (
       a: { variant: 'links.nav' }
     }}
   >
+    <Link href="/">/</Link>
     <Link href="/about">Bio</Link>
-    <Link href="/resume">CV</Link>
     <NavLink href="https://notebook.lachlanjc.com">Notebook</NavLink>
     <NavLink href="https://edu.lachlanjc.com">Coursework</NavLink>
-    <Box sx={{ mx: 'auto' }} />
-    <ColorButton />
+    <ColorButton sx={{ ml: 'auto' }} />
   </Container>
 )
 

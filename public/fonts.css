@@ -1,12 +1,22 @@
 @font-face {
-	font-family: "Gradient Premium";
-	src: url("https://cdn.glitch.global/4d99d0f7-c364-44a5-b1b9-2c3c3f5cb333/GradientPremium-Regular-3da6ebddc5840a7f52c834cf36ea5eed.woff2?v=1647670344287") format("woff2"), url("https://cdn.glitch.global/4d99d0f7-c364-44a5-b1b9-2c3c3f5cb333/GradientPremium-Regular-c40b35eab2238649df2d1468a60ebfcc.woff?v=1647671617343") format("woff");
-	font-style: normal;
-	font-weight: normal;
+  font-family: 'Mona Sans';
+  src: url('/fonts/Mona-Sans-Regular.woff2') format('woff2'),
+    url('/fonts/Mona-Sans-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
 }
 @font-face {
-	font-family: "Gradient Premium";
-	src: url("https://cdn.glitch.global/4d99d0f7-c364-44a5-b1b9-2c3c3f5cb333/GradientPremium-Bold-6125ed143501e7db9b703aae58b8bbfe.woff2?v=1647670335793") format("woff2"), url("https://cdn.glitch.global/4d99d0f7-c364-44a5-b1b9-2c3c3f5cb333/GradientPremium-Bold-bde587a7e19d6570dd1e6b6b4b3f22b1.woff?v=1647671639898") format("woff");
-	font-style: normal;
-	font-weight: bold;
+  font-family: 'Mona Sans';
+  src: url('/fonts/Mona-Sans-Bold.woff2') format('woff2'),
+    url('/fonts/Mona-Sans-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Hubot Sans';
+  src: url('/fonts/Hubot-Sans-Black.woff2') format('woff2'),
+    url('/fonts/Hubot-Sans-Black.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
 }

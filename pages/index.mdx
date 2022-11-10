@@ -1,7 +1,12 @@
 import Banner from '../components/banner'
 import { Tiles, Tile, List } from '../components/blocks'
 import { Header, Footer, Rainbow } from '../components/layout'
-import { Container, Button } from 'theme-ui'
+import { Flex, Container, Button } from 'theme-ui'
+
+import imgWfh from '../public/projects/wfh-calculator.jpg'
+import imgCentre from '../public/projects/centresustains.jpg'
+import imgGun from '../public/projects/gunfunded.jpg'
+import imgHackPenn from '../public/projects/hackpenn.jpg'
 
 <Banner>
 
@@ -11,18 +16,26 @@ import { Container, Button } from 'theme-ui'
 
 <Header />
 
-<Container id="work" variant="container" sx={{ '> h2': { variant: 'styles.h2', mt: [4, 5], mb: [2, 3], a: { color: 'inherit' } } }}>
+<Container
+  id="work"
+  variant="container"
+  sx={{
+    mt: -3,
+    h2: { variant: 'styles.h2', mt: [4, 5], mb: [2, 3], a: { color: 'inherit' } }
+  }}
+>
 
-## Work I’m proud of
+## 2021
 
 <Tiles>
 <Tile
-  href="https://watershedclimate.com/wfh-calculator"
+  href="https://watershed.com/wfh-calculator"
   id="wfh-calculator"
-  alt="US Capitol building with Gun Funded site overlaid"
+  img={imgWfh}
+  alt="Screenshot of WFH calculator on iPad above tech office photo"
 >
 
-## Watershed WFH Emissions Calculator
+### Watershed WFH Emissions Calculator
 
 Worked with the Watershed team to build an emissions calculator for companies returning to offices.
 
@@ -30,70 +43,22 @@ Worked with the Watershed team to build an emissions calculator for companies re
 <Tile
   href="https://centresustains.com"
   id="centresustains"
+  img={imgCentre}
   alt="Screenshot of Centre Sustains site on iPad above local farm photo"
 >
 
-## Centre Sustains
+### Centre Sustains
 
 Made a website for my local government’s climate planning public outreach, January 2021. Volunteer/open source.
 
 </Tile>
-<Tile
-  href="https://hackclub.com/bank/"
-  id="bank"
-  alt="Banner of hackathon with Hack Club Bank logo"
->
-
-## Hack Club Bank
-
-Designed the app & website for the first bank made for high school hackers. $2M transacted & counting.
-
-</Tile>
-<Tile
-  href="https://hackclub.com/"
-  id="hackclub"
-  alt="Hack Club students having fun with Hack Club logo overlaid"
->
-
-## Hack Club
-
-3 years as Head of Storytelling for Hack Club, a global nonprofit network of high school hackers. Made hackclub.com.
-
-</Tile>
-<Tile
-  href="https://gunfunded.com"
-  id="gunfunded"
-  alt="US Capitol building with Gun Funded site overlaid"
->
-
-## Gun Funded
-
-Made a website visualizing the gun lobby’s $40M+ funding of U.S.&nbsp;Congress, December 2019. Open source.
-
-</Tile>
-<Tile
-  href="https://hackpenn.com"
-  id="hackpenn"
-  alt="Lachlan presenting to crowd at Hack Pennsylvania"
->
-
-## Hack Pennsylvania
-
-Founded & led Pennsylvania’s largest-ever high school hackathon, January 2019. 111 students.
-
-</Tile>
-<Button
-  as="a"
-  href="https://2020-sites.lachlanjc.com"
-  sx={{ gridColumn: [null, 'span 2'], mx: 'auto', fontSize: 2 }}
->
-  Check out my recent sites →
-</Button>
 </Tiles>
 
 ## 2020 at [Hack Club](https://hackclub.com/)
 
-<List sx={{ mb: [4, 5] }}>
+I spent 3 years as Head of Storytelling for Hack Club, a global nonprofit network of high school hackers, leading our web frontend engineering & design.
+
+<List sx={{ mb: [3, 4] }}>
 
 - [Scrapbook _A daily diary of what Hack Clubbers are learning & making every day_](https://scrapbook.hackclub.com/)
 - [COVID Global Hackathon _Website for the world’s largest hackathon,
@@ -102,30 +67,62 @@ Founded & led Pennsylvania’s largest-ever high school hackathon, January 2019.
 - [Workshops _Hack Club’s open source, online learn-to-code curriculum_](https://workshops.hackclub.com/)
 
 </List>
+<Button
+  as="a"
+  href="https://2020-sites.lachlanjc.com"
+  children="Check out my other work →"
+/>
 
-## Welcome to my life
+<Flex sx={{ justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 3, mt: [4, 5], mb: 4, h2: { my: 0 } }}>
 
-<List>
+## 2019
 
-- [2020 Sites _Portfolio of my websites from 2020_](https://2020-sites.lachlanjc.com)
-- [2019 _Year in review: story, activity, music_](https://2019.lachlanjc.com)
-- [Notebook _Personal blog & notes_](https://notebook.lachlanjc.com)
-- [2017 _Year in review_](https://2019.lachlanjc.com)
+<Button
+  as="a"
+  href="https://2019.lachlanjc.com"
+  children="My year in review →"
+/>
 
-</List>
+</Flex>
 
-## Past project highlights
+<Tiles>
+<Tile
+  href="https://hackpenn.com"
+  id="hackpenn"
+  img={imgHackPenn}
+  alt="Lachlan presenting to crowd at Hack Pennsylvania"
+>
+
+### Hack Pennsylvania
+
+Founded & led Pennsylvania’s largest-ever high school hackathon, January 2019. 111 students.
+
+</Tile>
+<Tile
+  href="https://gunfunded.vercel.app"
+  id="gunfunded"
+  img={imgGun}
+  alt="US Capitol building with Gun Funded site overlaid"
+>
+
+### Gun Funded
+
+Made a website visualizing the gun lobby’s $40M+ funding of U.S.&nbsp;Congress, December 2019. Open source.
+
+</Tile>
+</Tiles>
+
+## Back in high school
 
 <List sx={{ mb: [4, 5] }}>
 
-- [Predict COVID-19 _First production RedwoodJS app, for comparing countries’ COVID trajectories._](https://github.com/lachlanjc/covid19)
-- [Windy City Hacks _Co-organized Chicago’s 2019 high school hackathon. 155&nbsp;attendees._](https://windyhacks.com)
 - [State High Hack Club _Founded/led a learn-to-code club at my high school for 2 years._](https://statehigh.hackclub.com)
 - [Hack Happy Valley _Organized central PA’s first high school hackathon, June 2018._](https://hackhappyvalley.com)
 - [Gasp! _Produced an inclusive sex ed zine with my local Planned&nbsp;Parenthood._](https://gasp.vercel.app/)
 - [StuTech Grants _Made site & brand for a high school grant program, November 2018._](https://grants.stutech.org)
 - [Blink _Accessible communication device. (Team member, PennApps.)_](https://blinkcare.github.io)
 - [Noodles _Cook better with all your recipes in one place. First app, 2014._](https://getnoodl.es)
+- [2017 _Year in review_](https://2019.lachlanjc.com)
 
 </List>
 

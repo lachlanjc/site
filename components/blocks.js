@@ -20,12 +20,13 @@ export const Tiles = (props) => (
       gridGap: 4,
       gridTemplateColumns: [null, 'repeat(2, 1fr)'],
       mx: [-3, 0, null, null, -4],
+      mb: [5, 5],
       ...props.sx
     }}
   />
 )
 
-export const Tile = ({ href, id, alt, children }) => (
+export const Tile = ({ href, id, img, alt, children }) => (
   <Card
     variant="interactive"
     as="a"
@@ -35,14 +36,18 @@ export const Tile = ({ href, id, alt, children }) => (
       bg: 'elevated',
       color: 'elevatedText',
       borderRadius: 'clamp(0px, ((100vw - 4px) - 100%) * 9999, 12px)',
-      p: [0, 0]
+      p: [0, 0],
+      img: {
+        width: '100%',
+        height: 'auto'
+      }
     }}
   >
-    <Image src={`/projects/${id}.jpg`} width={2048} height={1024} alt={alt} />
+    <Image src={img} placeholder="blur" alt={alt} />
     <Box
       sx={{
         p: [3, null, 4],
-        h2: {
+        h3: {
           pb: 2,
           my: 0,
           fontSize: [2, 3],
@@ -54,8 +59,7 @@ export const Tile = ({ href, id, alt, children }) => (
         },
         '> p': {
           color: 'inherit',
-          my: 0,
-          fontFeatureSettings: '"ss02"'
+          my: 0
         }
       }}
     >
@@ -88,8 +92,7 @@ export const List = (props) => (
         color: 'muted',
         fontWeight: 'body',
         fontStyle: 'normal',
-        fontSize: 1,
-        fontFeatureSettings: '"ss02"'
+        fontSize: 1
       },
       ...props.sx
     }}

@@ -86,19 +86,19 @@ const Banner = ({ children }) => (
         sx={{
           mt: [3, 4, 5],
           mb: [4, 5],
-          maxWidth: '30ch',
+          maxWidth: '36ch',
           lineHeight: 'caption',
           fontSize: [3, 4],
           fontWeight: 'normal',
-          fontFeatureSettings: '"ss02"',
           a: { fontWeight: 'bold' }
         }}
       >
-        I’m a web designer-developer reducing carbon emissions at{' '}
+        I’m a web designer-developer. Studying at NYU Interactive
+        Media&nbsp;Arts. On leave, working on climate at{' '}
         <a href="https://watershed.com" target="_blank" rel="noreferrer">
           Watershed
         </a>
-        . On&nbsp;leave, NYU Interactive Media&nbsp;Arts.
+        .
       </Text>
       {children}
     </Container>
