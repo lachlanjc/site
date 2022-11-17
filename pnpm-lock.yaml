@@ -5,6 +5,7 @@ specifiers:
   '@mdx-js/loader': ^2.1.5
   '@mdx-js/react': ^2.1.5
   '@next/mdx': ^13.0.2
+  '@vercel/analytics': ^0.1.5
   lodash: ^4.17.21
   next: ^13.0.2
   react: ^18.2.0
@@ -17,6 +18,7 @@ dependencies:
   '@mdx-js/loader': 2.1.5
   '@mdx-js/react': 2.1.5_react@18.2.0
   '@next/mdx': 13.0.2_wuv4qx5dshjptmdbtsqqkih5iu
+  '@vercel/analytics': 0.1.5_react@18.2.0
   lodash: 4.17.21
   next: 13.0.2_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
@@ -591,6 +593,14 @@ packages:
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: false
+
+  /@vercel/analytics/0.1.5_react@18.2.0:
+    resolution: {integrity: sha512-/k9N8Ea3Yc5A52GlkjzUEbi2vE/izClrOf++ryBkxEfrZM/OZwtHkdNw/QExZ1h/B67RCZLK7bCOnKKrhG7gTg==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.1:

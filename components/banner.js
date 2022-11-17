@@ -12,8 +12,8 @@ const Banner = ({ children }) => (
       minHeight: '100vh',
       overflow: 'hidden',
       position: 'relative',
-      py: 5,
-      pt: [null, 6],
+      pt: [5, 6],
+      pb: 5,
       mb: 0
     }}
   >
