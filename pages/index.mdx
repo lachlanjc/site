@@ -3,6 +3,8 @@ import { Tiles, Tile, List } from '../components/blocks'
 import { Header, Footer, Rainbow } from '../components/layout'
 import { Flex, Container, Button } from 'theme-ui'
 
+import imgWatershedEarthDay from '../public/projects/watershed-earth-day.jpg'
+import imgDecarbonize from '../public/projects/decarbonize.jpg'
 import imgWfh from '../public/projects/wfh-calculator.jpg'
 import imgCentre from '../public/projects/centresustains.jpg'
 import imgGun from '../public/projects/gunfunded.jpg'
@@ -24,6 +26,35 @@ import imgHackPenn from '../public/projects/hackpenn.jpg'
     h2: { variant: 'styles.h2', mt: [4, 5], mb: [2, 3], a: { color: 'inherit' } }
   }}
 >
+
+## 2022
+
+<Tiles>
+<Tile
+  href="https://decarbonize-the-game.vercel.app/about"
+  id="decarbonize"
+  img={imgDecarbonize}
+  alt="iPad and game pieces bathed in pink light with energy source icons"
+>
+
+### Decarbonize: The Game
+
+Interactive board game where the player assembles coal, gas, wind, & solar to design their own electricity grid.
+
+</Tile>
+<Tile
+  href="https://watershed.com/eng/creating-a-shareable-earth-day-campaign-in-1-week"
+  id="watershed-earth-day"
+  img={imgWatershedEarthDay}
+  alt="Collage of cards of climate illustrations"
+>
+
+### Watershed Earth Day
+
+Designed and built a shareable year-in-review campaign for companies’ carbon footprints.
+
+</Tile>
+</Tiles>
 
 ## 2021
 

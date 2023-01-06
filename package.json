@@ -11,16 +11,16 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
-    "@mdx-js/loader": "^2.1.5",
-    "@mdx-js/react": "^2.1.5",
-    "@next/mdx": "^13.0.2",
-    "@vercel/analytics": "^0.1.5",
+    "@mdx-js/loader": "^2.2.1",
+    "@mdx-js/react": "^2.2.1",
+    "@next/mdx": "^13.1.1",
+    "@vercel/analytics": "^0.1.6",
     "lodash": "^4.17.21",
-    "next": "^13.0.2",
+    "next": "^13.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "supercons": "^0.0.1",
-    "theme-ui": "^0.15.3"
+    "theme-ui": "^0.15.4"
   },
   "glitch": {
     "projectType": "generated_static"
