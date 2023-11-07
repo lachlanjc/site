@@ -59,7 +59,8 @@ export const Tile = ({ href, id, img, alt, children }) => (
         },
         '> p': {
           color: 'inherit',
-          my: 0
+          my: 0,
+          textWrap: 'pretty'
         }
       }}
     >

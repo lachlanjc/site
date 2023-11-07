@@ -3,6 +3,8 @@ import { Tiles, Tile, List } from '../components/blocks'
 import { Header, Footer, Rainbow } from '../components/layout'
 import { Flex, Container, Button } from 'theme-ui'
 
+import imgRegulatory from '../public/projects/regulatory-checkup.jpg'
+import imgRemapping from '../public/projects/remapping-landscapes.jpg'
 import imgWatershedEarthDay from '../public/projects/watershed-earth-day.jpg'
 import imgDecarbonize from '../public/projects/decarbonize.jpg'
 import imgWfh from '../public/projects/wfh-calculator.jpg'
@@ -26,6 +28,35 @@ import imgHackPenn from '../public/projects/hackpenn.jpg'
     h2: { variant: 'styles.h2', mt: [4, 5], mb: [2, 3], a: { color: 'inherit' } }
   }}
 >
+
+## 2023
+
+<Tiles>
+<Tile
+  href="https://watershed.com/sustainability-assessment"
+  id="regulatory-checkup"
+  img={imgRegulatory}
+  alt="Screenshot of Regulatory Checkup"
+>
+
+### Watershed Regulatory Checkup
+
+Quiz to help companies understand their climate regulatory exposure.
+
+</Tile>
+<Tile
+  href="https://edu.lachlanjc.com/2023-05-15_dis_remapping_our_landscapes"
+  id="remapping-landscapes"
+  img={imgRemapping}
+  alt="Mockup of fracking/solar/landfill search terms with Apple Maps"
+>
+
+### Remapping Our Landscapes
+
+Design project considering the infrastructure we omit from our digital maps.
+
+</Tile>
+</Tiles>
 
 ## 2022
 
@@ -60,7 +91,7 @@ Designed and built a shareable year-in-review campaign for companies’ carbon f
 
 <Tiles>
 <Tile
-  href="https://watershed.com/wfh-calculator"
+  href="https://marketing-omaunjnsu-watershedclimate.vercel.app/wfh-calculator"
   id="wfh-calculator"
   img={imgWfh}
   alt="Screenshot of WFH calculator on iPad above tech office photo"
