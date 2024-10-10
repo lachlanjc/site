@@ -1,19 +1,20 @@
 import { Flex, Container, Heading, Badge, Text } from 'theme-ui'
 import BGImg from './bg-img'
-import Slide from './slide-up'
-import bannerImg from '../public/banner_warm.jpg'
+import FadeIn from './fade'
+import bannerImg from '../public/rainbow.webp'
+import SlideUp from './slide-up'
 
 const Banner = ({ children }) => (
   <Flex
     as="header"
     sx={{
       flexDirection: 'column',
+      justifyContent: 'end',
       color: 'white',
       minHeight: '100vh',
       overflow: 'hidden',
       position: 'relative',
-      pt: [5, 6],
-      pb: 5,
+      py: [3, 4],
       mb: 0
     }}
   >
@@ -26,7 +27,7 @@ const Banner = ({ children }) => (
       sx={{
         px: [3, 4, 5],
         textShadow:
-          '0 1px 2px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.25)',
+          '0 1px 2px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.125)',
         ul: {
           listStyle: 'none',
           display: 'flex',
@@ -47,24 +48,11 @@ const Banner = ({ children }) => (
         footer: { pl: '0 !important' }
       }}
     >
-      <Slide>
-        <Heading
-          as="h1"
-          sx={{
-            fontFamily: 'display',
-            fontSize: [6, 7],
-            mt: 0,
-            mb: 3
-          }}
-        >
-          Hey, I’m
-          <br />
-          Lachlan Campbell.
-        </Heading>
+      <SlideUp delay={2500}>
         <Badge
           variant="pill"
           sx={{
-            bg: 'yellow',
+            bg: 'fuschia',
             transform: 'rotate(-4deg)',
             fontSize: [3, 4],
             px: 3,
@@ -79,26 +67,36 @@ const Banner = ({ children }) => (
         >
           they/them
         </Badge>
-      </Slide>
+      </SlideUp>
+      <Heading
+        as="h1"
+        sx={{
+          fontFamily: 'display',
+          fontSize: [6, 7],
+          lineHeight: 1,
+          mt: 3,
+          mb: 3
+        }}
+      >
+        <FadeIn>Lachlan Campbell</FadeIn>
+      </Heading>
       <Text
         as="p"
         variant="headline"
         sx={{
-          mt: [3, 4, 5],
-          mb: [4, 5],
-          maxWidth: '36ch',
+          mb: [3, 4],
+          display: 'flex',
+          flexDirection: 'column',
           lineHeight: 'caption',
+          gap: 2,
           fontSize: [3, 4],
           fontWeight: 'normal',
-          a: { fontWeight: 'bold' }
+          letterSpacing: '-0.01em'
         }}
       >
-        I’m a web designer-developer. Studying at NYU Interactive
-        Media&nbsp;Arts. On leave, working on climate at{' '}
-        <a href="https://watershed.com" target="_blank" rel="noreferrer">
-          Watershed
-        </a>
-        .
+        <FadeIn>Worldwide web design engineer, currently in NYC.</FadeIn>
+        <FadeIn>This year: finishing NYU Interactive Media Arts.</FadeIn>
+        <FadeIn>Next year: leading design engineering at Watershed.</FadeIn>
       </Text>
       {children}
     </Container>
