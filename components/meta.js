@@ -6,7 +6,7 @@ const makeTitle = (title, name) =>
 const Meta = ({
   name = 'Lachlan Campbell', // site name
   title = '@lachlanjc', // page title
-  description = 'Web designer-developer, currently working on climate at Watershed in San Francisco. NYU ’24, Interactive Media Arts. they/them',
+  description = 'Worldwide web design engineer in NYC, working on climate at Watershed. NYU ’25, Interactive Media Arts.',
   image = 'https://lachlanjc.com/card.jpg',
   color = '#ffaf26'
 }) => (
