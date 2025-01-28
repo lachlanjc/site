@@ -1,14 +1,48 @@
 ---
 import Socials from './Socials.astro';
+import Project from './Project.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+let allProjects = await getCollection('projects');
+// sort by year, descending, then featured, true then false
+allProjects = allProjects.sort((a, b) => {
+  if (a.data.year > b.data.year) return -1;
+  if (a.data.year < b.data.year) return 1;
+  if (a.data.feat && !b.data.feat) return -1;
+  if (!a.data.feat && b.data.feat) return 1;
+  return 0;
+});
 ---
 
-<header class="container mx-auto max-w-4xl py-24">
-<span class="font-triple text-light bg-[#1527c6] px-3 py-1 rounded-full -rotate-5 inline-block">they/them</span>
-	<h1 class="text-8xl font-bold text-avatar font-triple indent-[-.25ch] mt-2">Lachlan Campbell</h1>
-	<p class="my-6 text-xl/9 text-[#1527c6]">
+<main class="container mx-auto max-w-4xl py-12 mb-24 md:px-4">
+<header class="px-4 md:px-0 mb-24 font-triple">
+  <span class="font-sans text-light bg-dark dark:bg-avatar px-3 py-1 rounded-full -rotate-5 inline-block">they/them</span>
+	<h1 class="text-8xl font-bold text-avatar indent-[-.25ch] mt-2">Lachlan Campbell</h1>
+	<p class="my-6 text-xl/9">
 		Worldwide web design engineer & artist.<br />
     This spring: finishing NYU Interactive Media Arts in NYC.<br />
     This summer: leading design engineering at <a href="https://watershed.com" class="underline underline-offset-5 hover:underline-offset-3 transition-[text-underline-offset]">Watershed</a> in SF.
   </p>
+  <details class="group mb-8 rounded-[24px] p-3 bg-lavender/20 open:bg-lavender transition-colors">
+    <summary class="font-sans text-muted dark:text-lavender group-open:text-dark transition-colors cursor-pointer ml-1 flex items-center gap-2 font-bold">
+      <svg class="-rotate-45 group-open:rotate-0 transition-transform" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" title="view-close"><path d="M11.121,9.707c-0.39,-0.391 -1.024,-0.391 -1.414,0c-0.391,0.39 -0.391,1.024 0,1.414l4.95,4.95l-4.95,4.95c-0.391,0.39 -0.391,1.023 0,1.414c0.39,0.39 1.024,0.39 1.414,0l4.95,-4.95l4.95,4.95c0.39,0.39 1.023,0.39 1.414,0c0.39,-0.391 0.39,-1.024 0,-1.414l-4.95,-4.95l4.95,-4.95c0.39,-0.39 0.39,-1.024 0,-1.414c-0.391,-0.391 -1.024,-0.391 -1.414,0l-4.95,4.95l-4.95,-4.95Z"></path></svg>
+      Full bio
+    </summary>
+    <p class="p-2 text-dark text-pretty">
+    Lachlan Campbell (they/them, b. 2001), is a web design engineer. Originally from central Pennsylvania, they started coding at an early age, working on open source projects and hackathons.
+    Their career started at the nonprofit <a href="https://hackclub.com" class="font-bold underline underline-offset-4">Hack Club</a>, leading storytelling—making design, websites, & programs—for teenagers to start coding.
+    In early 2021, they joined <a href="https://watershed.com" class="font-bold underline underline-offset-4">Watershed</a> to help companies decarbonize.
+    They’re currently a senior in NYU Tisch’s undergraduate program in Interactive Media Arts, making art with code, fabrication, & hardware.
+    In 2023, they studied in Berlin.
+    In 2025, they’re returning to San Francisco to lead design engineering at Watershed.
+    </p>
+  </details>
 	<Socials />
 </header>
+
+<section aria-label="Projects" class="grid gap-4 lg:gap-8 md:grid-cols-2">
+{allProjects.map((project) => (
+  <Project project={project} />
+))}
+</section>
+</main>

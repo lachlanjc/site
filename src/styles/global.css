@@ -16,6 +16,49 @@
 @theme {
   --font-triple: "ABCOracleTriple", sans-serif;
   --font-sans: "ABCOraclePlus", monospace;
-  --color-avatar: oklch(0.66 0.27 317.69); /* #d241fa */
+  --color-avatar: oklch(
+    0.67 0.18 117.23
+  ); /* oklch(0.66 0.27 317.69); / #d241fa */
   --color-light: #f4e1f9;
+  --color-muted: #6870b0;
+  --color-lavender: #a4aeff;
+  --color-dark: #1527c6;
+  --shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  --shadow-inset: inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 2px 2px rgba(0, 0, 0, 0.04);
+  --shadow-text: 0 1px 2px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.125);
+  --shadow-small: 0 1px 2px rgba(0, 0, 0, 0.0625),
+    0 2px 4px rgba(0, 0, 0, 0.0625);
+  --shadow-card: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 1px 1px rgba(0, 0, 0, 0.02),
+    0 4px 8px -4px rgba(0, 0, 0, 0.04), 0 16px 24px -8px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 1px 1px rgba(0, 0, 0, 0.02), 0 8px 16px -4px rgba(0, 0, 0, 0.04),
+    0 24px 32px -8px rgba(0, 0, 0, 0.06);
+}
+
+.rounded-edges {
+  border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 12px);
+}
+
+details {
+  inline-size: 76ch;
+
+  @media (prefers-reduced-motion: no-preference) {
+    interpolate-size: allow-keywords;
+  }
+
+  &::details-content {
+    opacity: 0;
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+      content-visibility 0.375s allow-discrete,
+      opacity 0.375s,
+      block-size 0.375s;
+  }
+
+  &[open]::details-content {
+    opacity: 1;
+    block-size: auto;
+  }
 }

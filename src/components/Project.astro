@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+import { Image } from 'astro:assets';
+---
+
+<a id={project.slug} href={project.data.url} class={`block relative overflow-hidden ${project.data.feat ? 'bg-white shadow-card hover:shadow-elevated' : 'border-dashed border-1 border-lavendar dark:border-muted'} transition-all hover:-translate-y-1 rounded-edges lg:even:mt-24 lg:even:-mb-24`} style={`view-transition-name: ${project.slug}`}>
+  <Image src={project.data.cover} alt={project.data.coverAlt} class="w-full aspect-[2/1]" />
+  <div class="p-6">
+    <span class="text-sm float-right mt-1 text-muted">{project.data.year}</span>
+    <h2 class={`text-xl inline ${project.data.feat ? 'text-dark' : ''} font-triple font-bold -mt-1`}>{project.data.name}</h2>
+    <p class={`text-sm text-muted ${project.data.feat ? '' : 'dark:text-lavender'} mt-1 text-pretty`}>{project.data.desc}</p>
+  </div>
+</a>
