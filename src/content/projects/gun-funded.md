@@ -1,6 +1,6 @@
 ---
 name: "Gun Funded"
-desc: "Made a website visualizing the gun lobby’s $40M+ funding of U.S. Congress, December 2019. Open source."
+desc: "Made a website visualizing the gun lobby’s $40M+ funding of U.S. Congress."
 cover: ./gun-funded.jpg
 coverAlt: "US Capitol building with Gun Funded site overlaid"
 url: "https://gunfunded.vercel.app"

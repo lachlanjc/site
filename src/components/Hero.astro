@@ -1,4 +1,5 @@
 ---
+import Color from './Color.astro';
 import Socials from './Socials.astro';
 import Project from './Project.astro';
 import { getCollection, getEntry } from 'astro:content';
@@ -16,15 +17,17 @@ allProjects = allProjects.sort((a, b) => {
 
 <main class="container mx-auto max-w-4xl py-12 mb-24 md:px-4">
 <header class="px-4 md:px-0 mb-24 font-triple">
-  <span class="font-sans text-light bg-dark dark:bg-avatar px-3 py-1 rounded-full -rotate-5 inline-block">they/them</span>
-	<h1 class="text-8xl font-bold text-avatar indent-[-.25ch] mt-2">Lachlan Campbell</h1>
-	<p class="my-6 text-xl/9">
+  <Color />
+
+  <span class="font-sans text-light bg-flame px-3 py-1 rounded-full -rotate-5 inline-block">they/them</span>
+	<h1 class="text-7xl md:text-8xl font-bold text-(--active-hue) indent-[-.25ch] mt-2">Lachlan Campbell</h1>
+	<p class="my-6 text-xl/9 text-pretty">
 		Worldwide web design engineer & artist.<br />
     This spring: finishing NYU Interactive Media Arts in NYC.<br />
     This summer: leading design engineering at <a href="https://watershed.com" class="underline underline-offset-5 hover:underline-offset-3 transition-[text-underline-offset]">Watershed</a> in SF.
   </p>
   <details class="group mb-8 rounded-[24px] p-3 bg-lavender/20 open:bg-lavender transition-colors">
-    <summary class="font-sans text-muted dark:text-lavender group-open:text-dark transition-colors cursor-pointer ml-1 flex items-center gap-2 font-bold">
+    <summary class="font-sans text-(--active-muted) group-open:text-dark transition-colors cursor-pointer ml-1 flex items-center gap-2 font-bold">
       <svg class="-rotate-45 group-open:rotate-0 transition-transform" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" title="view-close"><path d="M11.121,9.707c-0.39,-0.391 -1.024,-0.391 -1.414,0c-0.391,0.39 -0.391,1.024 0,1.414l4.95,4.95l-4.95,4.95c-0.391,0.39 -0.391,1.023 0,1.414c0.39,0.39 1.024,0.39 1.414,0l4.95,-4.95l4.95,4.95c0.39,0.39 1.023,0.39 1.414,0c0.39,-0.391 0.39,-1.024 0,-1.414l-4.95,-4.95l4.95,-4.95c0.39,-0.39 0.39,-1.024 0,-1.414c-0.391,-0.391 -1.024,-0.391 -1.414,0l-4.95,4.95l-4.95,-4.95Z"></path></svg>
       Full bio
     </summary>

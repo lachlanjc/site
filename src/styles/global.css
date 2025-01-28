@@ -16,13 +16,19 @@
 @theme {
   --font-triple: "ABCOracleTriple", sans-serif;
   --font-sans: "ABCOraclePlus", monospace;
-  --color-avatar: oklch(
-    0.67 0.18 117.23
-  ); /* oklch(0.66 0.27 317.69); / #d241fa */
+
+  --color-candy: oklch(0.92 0.08 328.08);
+  --color-flame: oklch(0.7 0.24 32.74);
+  --color-brat: oklch(0.67 0.18 117.23);
+  --color-revel: oklch(0.37 0.1 110.52);
+  --color-indigo: oklch(0.4 0.25 265.2);
+
+  --color-avatar: var(--color-brat);
   --color-light: #f4e1f9;
   --color-muted: #6870b0;
   --color-lavender: #a4aeff;
   --color-dark: #1527c6;
+
   --shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
   --shadow-inset: inset 0 0 0 1px rgba(0, 0, 0, 0.08),
     0 2px 2px rgba(0, 0, 0, 0.04);
@@ -36,12 +42,52 @@
     0 24px 32px -8px rgba(0, 0, 0, 0.06);
 }
 
+@property --active-hue {
+  syntax: "<string>";
+  inherits: false;
+  initial-value: var(--color-brat);
+}
+@property --active-comp {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.5;
+}
+@property --active-saturation {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.5;
+}
+
+:root {
+  --active-hue: var(--color-brat);
+  --active-saturation: 0.5;
+  --active-bg: oklch(
+    from var(--active-hue) calc(l + 0.3) calc(var(--active-saturation) / 6) h
+  );
+  --active-text: oklch(from var(--active-hue) 0.1 c calc(var(--active-comp)));
+  --active-muted: color-mix(in oklab, var(--active-text), transparent 40%);
+  /* COMING SOON
+  @media (prefers-color-scheme: dark) {
+    --active-hue: var(--color-flame);
+    --active-saturation: 0;
+    --active-bg: oklch(
+      from var(--active-hue) 0.15 c calc(var(--active-saturation) / 5)
+    );
+    --active-text: oklch(
+      from var(--active-hue) 0.9 c calc(var(--active-comp) / 5)
+    );
+    --active-muted: oklch(
+      from var(--active-hue) 0.5 c calc(var(--active-comp) / 8)
+    );
+  } */
+}
+
 .rounded-edges {
   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 12px);
 }
 
 details {
-  inline-size: 76ch;
+  inline-size: min(100%, 76ch);
 
   @media (prefers-reduced-motion: no-preference) {
     interpolate-size: allow-keywords;
