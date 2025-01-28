@@ -1,11 +1,13 @@
 ---
-import Color from './Color.astro';
-import Socials from './Socials.astro';
-import Project from './Project.astro';
-import { getCollection, getEntry } from 'astro:content';
+import Color from "./Color.astro";
+import Socials from "./Socials.astro";
+import Project from "./Project.astro";
+import { getCollection, getEntry } from "astro:content";
+import { Image } from "astro:assets";
+import portrait from "../assets/portraits/berlin.jpg";
 
-let allProjects = await getCollection('projects');
-// sort by year, descending, then featured, true then false
+let allProjects = await getCollection("projects");
+// sort by year, descending, then featured, true then false, then name
 allProjects = allProjects.sort((a, b) => {
   if (a.data.year > b.data.year) return -1;
   if (a.data.year < b.data.year) return 1;
@@ -31,14 +33,159 @@ allProjects = allProjects.sort((a, b) => {
       Lachlan Campbell
     </h1>
     <p class="my-6 text-xl/9 text-pretty">
+      Worldwide web design engineer & artist.<br />
+      This spring: finishing NYU Interactive Media Arts in NYC.<br />
+      This summer: leading design engineering at <a
+        href="https://watershed.com"
+        class="underline underline-offset-5 hover:underline-offset-3 transition-[text-underline-offset]"
+      >
+        Watershed
+      </a> in SF.
     </p>
-  </details>
-	<Socials />
-</header>
+    <details
+      class="group mb-8 rounded-[24px] p-2 shadow-border open:shadow-none open:bg-lavender transition-colors grid"
+    >
+      <summary
+        class="font-sans text-(--active-muted) group-open:text-dark transition-colors cursor-pointer ml-1 flex items-center gap-2 font-bold"
+      >
+        <svg
+          class="-rotate-45 group-open:rotate-0 transition-transform"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          stroke-linejoin="round"
+          stroke-miterlimit="1.414"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          viewBox="0 0 32 32"
+          preserveAspectRatio="xMidYMid meet"
+          fill="currentColor"
+          width="24"
+          height="24"
+          title="view-close"
+        >
+          <path
+            d="M11.121,9.707c-0.39,-0.391 -1.024,-0.391 -1.414,0c-0.391,0.39 -0.391,1.024 0,1.414l4.95,4.95l-4.95,4.95c-0.391,0.39 -0.391,1.023 0,1.414c0.39,0.39 1.024,0.39 1.414,0l4.95,-4.95l4.95,4.95c0.39,0.39 1.023,0.39 1.414,0c0.39,-0.391 0.39,-1.024 0,-1.414l-4.95,-4.95l4.95,-4.95c0.39,-0.39 0.39,-1.024 0,-1.414c-0.391,-0.391 -1.024,-0.391 -1.414,0l-4.95,4.95l-4.95,-4.95Z"
+          >
+          </path>
+        </svg>
+        Full bio
+      </summary>
+      <div class="grid gap-4 md:gap-6 p-2 md:grid-cols-[2fr_1fr]">
+        <p class="text-dark text-pretty">
+          Lachlan Campbell (they/them, b. 2001), is a design engineer & artist.
+          Their journey with open source began in middle school in central PA.
+          At nonprofit  <a
+            href="https://hackclub.com"
+            class="font-bold underline underline-offset-4">Hack&nbsp;Club</a
+          > over 2017–20, they led designing & building programs for 30K+ teenagers
+          to start coding, and organized hackathons. In 2021, they joined <a
+            href="https://watershed.com"
+            class="font-bold underline underline-offset-4">Watershed</a
+          > (#12) to help companies decarbonize, launching the website, a rebranding,
+          and beginning the design system. Now in NYU Tisch’s undergraduate program
+          in Interactive Media Arts, they’re making art with code, fabrication, and
+          hardware between New&nbsp;York & Berlin. In summer 2025, they’re returning
+          to San&nbsp;Francisco to lead design engineering at Watershed.
+        </p>
+        <Image
+          src={portrait}
+          alt="Selfie of Lachlan wearing a scarf outside"
+          class="w-full rounded-lg"
+        />
+      </div>
+    </details>
+    <Socials />
+  </header>
 
-<section aria-label="Projects" class="grid gap-4 lg:gap-8 md:grid-cols-2">
-{allProjects.map((project) => (
-  <Project project={project} />
-))}
-</section>
+  <section
+    class="mx-4 md:mx-0 mt-12 mb-8 flex flex-wrap items-center gap-x-8 gap-y-4"
+  >
+    <nav
+      class="flex justify-center items-center gap-1 w-fit font-sans shadow-border rounded-full"
+    >
+      <span
+        class="font-bold text-(--active-hue) bg-white px-4 py-2 rounded-full inline-block shadow-card"
+      >
+        Projects
+      </span>
+      <a
+        class="px-4 py-2 rounded-full inline-flex items-start gap-2 transition-colors hover:bg-white/50"
+        href="https://notebook.lachlanjc.com"
+      >
+        Notebook
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          fill="currentColor"
+          class="opacity-40 mt-1"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.90951 7.25437C6.85951 7.80437 7.2649 8.29077 7.81491 8.34077C8.36491 8.39077 8.8513 7.98547 8.9013 7.43547L8.90141 7.43377C9.31961 5.57717 9.3196 4.16297 9.0685 1.66124C9.0027 1.28688 8.88841 0.903258 8.61251 0.627367C8.33661 0.351488 7.95301 0.237188 7.57861 0.171378C5.07701 -0.079712 3.6628 -0.079712 1.805 0.338538C1.2662 0.459848 0.849103 0.874997 0.899104 1.42502C0.949103 1.97503 1.4355 2.38037 1.9855 2.33038L2.1956 2.31136C3.68407 2.17653 4.57822 2.09554 5.73211 2.0936L5.73362 2.09512L0.292893 7.53585C-0.0976311 7.92637 -0.0976311 8.55953 0.292893 8.95006C0.683417 9.34058 1.31658 9.34058 1.70711 8.95006L7.1453 3.51187C7.14197 4.64454 7.06279 5.53391 6.93781 6.93647L6.90951 7.25437Z"
+          >
+          </path>
+        </svg>
+      </a>
+      <a
+        class="px-4 py-2 rounded-full inline-flex items-start gap-2 transition-colors hover:bg-white/50"
+        href="https://edu.lachlanjc.com"
+      >
+        Coursework
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          fill="currentColor"
+          class="opacity-40 mt-1"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.90951 7.25437C6.85951 7.80437 7.2649 8.29077 7.81491 8.34077C8.36491 8.39077 8.8513 7.98547 8.9013 7.43547L8.90141 7.43377C9.31961 5.57717 9.3196 4.16297 9.0685 1.66124C9.0027 1.28688 8.88841 0.903258 8.61251 0.627367C8.33661 0.351488 7.95301 0.237188 7.57861 0.171378C5.07701 -0.079712 3.6628 -0.079712 1.805 0.338538C1.2662 0.459848 0.849103 0.874997 0.899104 1.42502C0.949103 1.97503 1.4355 2.38037 1.9855 2.33038L2.1956 2.31136C3.68407 2.17653 4.57822 2.09554 5.73211 2.0936L5.73362 2.09512L0.292893 7.53585C-0.0976311 7.92637 -0.0976311 8.55953 0.292893 8.95006C0.683417 9.34058 1.31658 9.34058 1.70711 8.95006L7.1453 3.51187C7.14197 4.64454 7.06279 5.53391 6.93781 6.93647L6.90951 7.25437Z"
+          >
+          </path>
+        </svg>
+      </a>
+    </nav>
+    <label class="inline-flex items-center gap-2 shrink-0">
+      <input
+        type="checkbox"
+        switch
+        checked
+        id="highlights"
+        class="accent-(--active-hue)"
+      />
+      Highlights only
+    </label>
+  </section>
+
+  <section aria-label="Projects" class="grid gap-4 lg:gap-8 md:grid-cols-2">
+    {allProjects.map((project) => <Project project={project} />)}
+  </section>
 </main>
+
+<script is:inline>
+  document.getElementById("highlights").addEventListener("change", (event) => {
+    const feat = event.target.checked;
+    console.log(feat);
+
+    function toggleProjects(feat) {
+      const projects = document.querySelectorAll('[data-featured="false"]');
+      projects.forEach((project) => {
+        if (feat) {
+          project.setAttribute("hidden", true);
+        } else {
+          project.removeAttribute("hidden");
+        }
+      });
+    }
+
+    if (!document.startViewTransition) {
+      toggleProjects(feat);
+      return;
+    }
+    document.startViewTransition(() => toggleProjects(feat));
+  });
+</script>

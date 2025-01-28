@@ -92,9 +92,31 @@ html {
   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 12px);
 }
 
-details {
-  inline-size: min(100%, 76ch);
+@media (width>=64rem) {
+  .lg\:visible-masonry:nth-child(2n of :not([hidden])) {
+    margin-block-start: 72px;
+    margin-block-end: -72px;
+  }
+}
 
+::view-transition-group(*) {
+  animation-duration: 0.375s;
+  animation-timing-function: ease-out;
+}
+
+::view-transition-group(root) {
+  animation-duration: 0.375s;
+  /* prettier-ignore */
+  animation-timing-function: linear(
+    0, 0.218 2.1%, 0.862 6.5%, 1.114, 1.296 10.7%, 1.346, 1.37 12.9%, 1.373,
+    1.364 14.5%, 1.315 16.2%, 1.032 21.8%, 0.941 24%, 0.891 25.9%, 0.877,
+    0.869 27.8%, 0.87, 0.882 30.7%, 0.907 32.4%, 0.981 36.4%, 1.012 38.3%, 1.036,
+    1.046 42.7% 44.1%, 1.042 45.7%, 0.996 53.3%, 0.988, 0.984 57.5%, 0.985 60.7%,
+    1.001 68.1%, 1.006 72.2%, 0.998 86.7%, 1
+  );
+}
+
+details {
   @media (prefers-reduced-motion: no-preference) {
     interpolate-size: allow-keywords;
   }

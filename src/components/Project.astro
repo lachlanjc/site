@@ -8,8 +8,20 @@ const { project } = Astro.props
 import { Image } from "astro:assets"
 ---
 
-<a id={project.slug} href={project.data.url} class={`block relative overflow-hidden ${project.data.feat ? 'bg-white shadow-card hover:shadow-elevated' : 'border-dashed border-1 border-lavendar dark:border-muted'} transition-all hover:-translate-y-1 rounded-edges lg:even:mt-24 lg:even:-mb-24`} style={`view-transition-name: ${project.slug}`}>
-  <Image src={project.data.cover} alt={project.data.coverAlt} class="w-full aspect-[2/1]" />
+<a
+  id={project.slug}
+  href={project.data.url}
+  class={`block relative overflow-hidden ${project.data.feat ? "bg-white shadow-card hover:shadow-elevated" : "border-dashed border-1 border-(--active-muted)"} transition-all hover:-translate-y-1 rounded-edges lg:visible-masonry`}
+  style={`view-transition-name: ${project.slug}`}
+  data-featured={project.data.feat}
+  hidden={!project.data.feat}
+>
+  <Image
+    src={project.data.cover}
+    alt={project.data.coverAlt}
+    class="w-full aspect-[2/1]"
+    loading={project.data.year === 2024 ? "eager" : "lazy"}
+  />
   <div class="p-6">
     <span class="text-sm float-right mt-1 text-(--active-muted)">
       {project.data.year}
@@ -21,5 +33,6 @@ import { Image } from "astro:assets"
     </h2>
     <p class={`text-sm text-(--active-muted) mt-1 text-pretty`}>
       {project.data.desc}
+    </p>
   </div>
 </a>
