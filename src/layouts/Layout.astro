@@ -1,3 +1,7 @@
+---
+import '../styles/global.css';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +9,31 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lachlan Campbell" />
+    <meta property="og:url" content="https://lachlanjc.com/" />
+    <meta name="twitter:site" content="@lachlanjc" />
+    <title>@lachlanjc – Lachlan Campbell</title>
+    <meta property="og:title" content="@lachlanjc – Lachlan Campbell" />
+    <meta name="twitter:title" content="@lachlanjc – Lachlan Campbell" />
+    <meta
+      name="description"
+      content="Worldwide web design engineer in NYC, working on climate at Watershed. NYU ’25, Interactive Media Arts."
+    />
+    <meta
+      property="og:description"
+      content="Worldwide web design engineer in NYC, working on climate at Watershed. NYU ’25, Interactive Media Arts."
+    />
+    <meta
+      name="twitter:description"
+      content="Worldwide web design engineer in NYC, working on climate at Watershed. NYU ’25, Interactive Media Arts."
+    />
+    <meta property="og:image" content="https://lachlanjc.com/card.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://lachlanjc.com/card.jpg" />
+    <meta name="theme-color" content="#ffaf26" />
 	</head>
-	<body>
+	<body class="bg-light">
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

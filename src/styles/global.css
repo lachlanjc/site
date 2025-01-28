@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@font-face {
+  src: url("/fonts/ABCOracleTripleVariable.woff2") format("woff2");
+  font-family: "ABCOracleTriple";
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  src: url("/fonts/ABCOraclePlusVariable.woff2") format("woff2");
+  font-family: "ABCOraclePlus";
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+  --font-triple: "ABCOracleTriple", sans-serif;
+  --font-sans: "ABCOraclePlus", monospace;
+  --color-avatar: oklch(0.66 0.27 317.69); /* #d241fa */
+  --color-light: #f4e1f9;
+}
