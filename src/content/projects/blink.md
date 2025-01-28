@@ -5,5 +5,5 @@ desc: PennApps hackathon wearable project to enable communication via blinking M
 cover: ./blink.jpg
 coverAlt: "Lachlan wearing hat-mounted foil sensor and Blink logo"
 url: "https://blinkcare.github.io"
-feat: true
+feat: false
 ---

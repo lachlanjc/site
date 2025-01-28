@@ -2,7 +2,7 @@
 name: "Watershed WFH GHG Calculator"
 desc: "Worked with the Watershed team to build an emissions calculator for companies returning to offices."
 cover: ./watershed-wfh-calculator.jpg
-coverAlt: "Screenshot of WFH calculator on iPad above tech office photo"
+coverAlt: "Screenshot of WFH calculator on iPad overlaid on tech office"
 url: "https://marketing-omaunjnsu-watershedclimate.vercel.app/wfh-calculator"
 year: 2021
 feat: true
