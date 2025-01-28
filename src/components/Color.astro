@@ -1,48 +1,83 @@
 ---
-const colors = ['candy','flame','brat','revel','indigo']
+const colors = ["flame", "brat", "revel", "indigo", "eggplant"];
 ---
 
-<div class="lg:fixed lg:left-4 lg:top-4 lg:bottom-4 lg:[writing-mode:tb-rl] flex gap-2 lg:gap-8 text-xs mb-8 lg:mb-0 not:supports-[color-mi">
+<div
+  class="lg:fixed lg:left-4 lg:top-4 lg:bottom-4 lg:[writing-mode:tb-rl] flex gap-2 lg:gap-8 text-xs mb-8 lg:mb-0 not:supports-[color-mi"
+>
   <fieldset name="hue" class="flex gap-2">
     <legend class="uppercase sr-only">Hue</legend>
-    {colors.map(color => (
-      <label class="">
-        <input type="radio" name="hue" id={`hue-${color}`} value={color} class="hidden" />
-        <label for={`hue-${color}`} style={`background-color: var(--color-${color})`} class="w-5 h-5 inline-block" title={color}>
-        <span class="sr-only">{color}</span>
+    {
+      colors.map((color) => (
+        <label>
+          <input
+            type="radio"
+            name="hue"
+            id={`hue-${color}`}
+            value={color}
+            class="hidden"
+          />
+          <label
+            for={`hue-${color}`}
+            style={`background-color: var(--color-${color})`}
+            class="w-5 h-5 inline-block"
+            title={color}
+          >
+            <span class="sr-only">{color}</span>
+          </label>
         </label>
-      </label>
-    ))}
-    </fieldset>
+      ))
+    }
+  </fieldset>
   <label class="uppercase grid text-right grid-cols-[5ch_1fr] gap-3 w-full">
     <abbrev title="Saturation">Sat</abbrev>
-    <input type="range" class="w-full accent-(--active-hue)" id="saturation" min="0" max="1" step="0.05" />
+    <input
+      type="range"
+      class="w-full accent-(--active-hue)"
+      id="saturation"
+      min="0"
+      max="1"
+      step="0.05"
+    />
   </label>
 </div>
 
-<script>
-function getSelectedHue() {
-  const hueButtons = document.getElementsByName('hue');
-  for (const radioButton of hueButtons) {
-    if (radioButton.checked) {
-      return radioButton.value;
+<script is:inline>
+  function getSelectedHue() {
+    const hueButtons = document.getElementsByName("hue");
+    for (const radioButton of hueButtons) {
+      if (radioButton.checked) {
+        return radioButton.value;
+      }
     }
+    return "brat";
   }
-  return 'brat';
-}
-const comps = {
-  candy: 0.45,
-  flame: 0.05,
-  brat: 0.25,
-  revel: 0.5,
-  indigo: 0.15,
-}
-addEventListener('input', (event) => {
-  const hue = getSelectedHue()
-  const saturation = document.getElementById('saturation').valueAsNumber
-  const comp = comps[hue]
-  document.documentElement.style.setProperty('--active-hue', `var(--color-${hue})`)
-  document.documentElement.style.setProperty('--active-saturation', saturation)
-  document.documentElement.style.setProperty('--active-comp', comp)
-})
+  const comps = {
+    flame: 0.05,
+    brat: 0.25,
+    revel: 0.5,
+    indigo: 0.15,
+    eggplant: 0.35,
+  };
+  addEventListener("input", (event) => {
+    const hue = getSelectedHue();
+    const saturation = document.getElementById("saturation").valueAsNumber;
+    const comp = comps[hue];
+    document.documentElement.style.setProperty(
+      "--active-hue",
+      `var(--color-${hue})`,
+    );
+    document.documentElement.style.setProperty(
+      "--active-saturation",
+      saturation,
+    );
+    document.documentElement.style.setProperty("--active-comp", comp);
+    // set theme color
+    const value = getComputedStyle(document.documentElement).getPropertyValue(
+      `--color-${hue}`,
+    );
+    document
+      .querySelector('meta[name="theme-color"]')
+      .setAttribute("content", value);
+  });
 </script>

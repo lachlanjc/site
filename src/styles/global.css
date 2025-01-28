@@ -22,8 +22,8 @@
   --color-brat: oklch(0.67 0.18 117.23);
   --color-revel: oklch(0.37 0.1 110.52);
   --color-indigo: oklch(0.4 0.25 265.2);
+  --color-eggplant: oklch(0.27 0.09 311.48);
 
-  --color-avatar: var(--color-brat);
   --color-light: #f4e1f9;
   --color-muted: #6870b0;
   --color-lavender: #a4aeff;
@@ -64,7 +64,9 @@
   --active-bg: oklch(
     from var(--active-hue) calc(l + 0.3) calc(var(--active-saturation) / 6) h
   );
-  --active-text: oklch(from var(--active-hue) 0.1 c calc(var(--active-comp)));
+  --active-text: oklch(
+    from var(--active-hue) calc(l / 1.25) calc(var(--active-comp) / 6) h
+  );
   --active-muted: color-mix(in oklab, var(--active-text), transparent 40%);
   /* COMING SOON
   @media (prefers-color-scheme: dark) {
@@ -80,6 +82,10 @@
       from var(--active-hue) 0.5 c calc(var(--active-comp) / 8)
     );
   } */
+}
+
+html {
+  font-synthesis: none;
 }
 
 .rounded-edges {
@@ -107,4 +113,8 @@ details {
     opacity: 1;
     block-size: auto;
   }
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
