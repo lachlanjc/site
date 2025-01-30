@@ -5,5 +5,6 @@ desc: Conceived quiz to help companies understand their climate regulatory expos
 cover: ./watershed-regulatory-checkup.jpg
 coverAlt: "Screenshot of Regulatory Checkup"
 url: "https://watershed.com/sustainability-assessment"
+color: "#265cff"
 feat: true
 ---

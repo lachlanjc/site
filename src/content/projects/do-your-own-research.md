@@ -4,6 +4,7 @@ desc: "An LLM-powered “research” tool that packages bizarre lies via customi
 cover: ./do-your-own-research.png
 coverAlt: "Screenshot of search field with purple novelty text saying Do Your Own Research"
 url: "https://lying-machine.vercel.app/"
+color: "#7c3aed"
 year: 2024
 feat: false
 ---

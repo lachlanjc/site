@@ -1,18 +1,24 @@
 ---
-import type { CollectionEntry } from "astro:content"
+import type { CollectionEntry } from "astro:content";
 interface Props {
-  project: CollectionEntry<"projects">
+  project: CollectionEntry<"projects">;
 }
 
-const { project } = Astro.props
-import { Image } from "astro:assets"
+const { project } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
 <a
   id={project.slug}
   href={project.data.url}
-  class={`block relative overflow-hidden ${project.data.feat ? "bg-white shadow-card hover:shadow-elevated" : "border-dashed border-1 border-(--active-muted)"} transition-all hover:-translate-y-1 rounded-edges lg:visible-masonry`}
-  style={`view-transition-name: ${project.slug}`}
+  class:list={[
+    `block relative isolate overflow-hidden outline-offset-4`,
+    project.data.feat
+      ? "bg-white shadow-card hover:shadow-elevated"
+      : "border-dashed border-1 border-(--active-muted)",
+    `transition-all hover:-translate-y-1 rounded-edges lg:visible-masonry`,
+  ]}
+  style={`view-transition-name: ${project.slug}; ${project.data.color ? `outline-color: ${project.data.color};` : ""}`}
   data-featured={project.data.feat}
   hidden={!project.data.feat}
 >
