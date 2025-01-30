@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css"
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -34,6 +34,8 @@ import "../styles/global.css"
     <meta name="theme-color" content="oklch(0.67 0.18 117.23)" />
   </head>
   <body class="bg-(--active-bg) text-(--active-text)">
-    <slot />
+    <main class="container mx-auto max-w-4xl py-12 mb-12 md:px-4">
+      <slot />
+    </main>
   </body>
 </html>
