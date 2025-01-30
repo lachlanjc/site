@@ -5,36 +5,38 @@ interface Props {
 }
 
 const { project } = Astro.props;
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 ---
 
 <a
   id={project.slug}
   href={project.data.url}
   class:list={[
-    `block relative isolate overflow-hidden outline-offset-4`,
+    `block relative @container overflow-hidden outline-offset-4`,
     project.data.feat
-      ? "bg-white shadow-card hover:shadow-elevated"
-      : "border-dashed border-1 border-(--active-muted)",
-    `transition-all hover:-translate-y-1 rounded-edges lg:visible-masonry`,
+      ? "bg-white/65 shadow-card hover:shadow-elevated"
+      : "bg-white/20 border-dashed border-b-1 md:border-1 border-(--active-muted)",
+    `transition-all hover:-translate-y-1 rounded-edges md:visible-masonry`,
   ]}
   style={`view-transition-name: ${project.slug}; ${project.data.color ? `outline-color: ${project.data.color};` : ""}`}
   data-featured={project.data.feat}
   hidden={!project.data.feat}
 >
-  <Image
+  <Picture
     src={project.data.cover}
     alt={project.data.coverAlt}
+    densities={[1, 2]}
+    width="416"
+    height="208"
+    sizes="(min-width: 48rem) 100vw, 416px"
     class="w-full aspect-[2/1]"
     loading={project.data.year === 2024 ? "eager" : "lazy"}
   />
-  <div class="p-6">
+  <div class="p-4 @sm:p-6 @xs:-mt-1">
     <span class="text-sm float-right mt-1 text-(--active-muted)">
       {project.data.year}
     </span>
-    <h2
-      class={`text-xl inline text-(--active-hue) font-triple font-bold -mt-1`}
-    >
+    <h2 class={`text-xl inline text-(--active-hue) font-triple font-bold`}>
       {project.data.name}
     </h2>
     <p class={`text-sm text-(--active-muted) mt-1 text-pretty`}>

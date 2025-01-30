@@ -1,3 +1,13 @@
+@layer reset {
+  html {
+    font-synthesis: none;
+  }
+
+  * {
+    outline-color: var(--active-hue);
+  }
+}
+
 @import "tailwindcss";
 
 @font-face {
@@ -67,7 +77,7 @@
   --active-text: oklch(
     from var(--active-hue) calc(l / 1.25) calc(var(--active-comp) / 6) h
   );
-  --active-muted: color-mix(in oklab, var(--active-text), transparent 40%);
+  --active-muted: color-mix(in oklab, var(--active-text), lch(0 0 0 / 0.5) 50%);
   /* COMING SOON
   @media (prefers-color-scheme: dark) {
     --active-hue: var(--color-flame);
@@ -84,16 +94,12 @@
   } */
 }
 
-html {
-  font-synthesis: none;
-}
-
 .rounded-edges {
   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 12px);
 }
 
-@media (width>=64rem) {
-  .lg\:visible-masonry:nth-child(2n of :not([hidden])) {
+@media (width>=48rem) {
+  .md\:visible-masonry:nth-child(2n of :not([hidden])) {
     margin-block-start: 72px;
     margin-block-end: -72px;
   }

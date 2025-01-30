@@ -8,8 +8,5 @@ export default defineConfig({
   // integrations: [mdx()],
   vite: {
     plugins: [tailwindcss()],
-    // build: {
-    //   assetsInlineLimit: 0,
-    // },
   },
 });
