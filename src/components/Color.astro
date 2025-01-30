@@ -1,33 +1,44 @@
 ---
 const colors = ["flame", "brat", "revel", "indigo", "eggplant"];
+const defaultColor = "brat";
 ---
 
-<div
-  class="lg:fixed lg:left-4 lg:top-4 lg:bottom-4 lg:[writing-mode:tb-rl] flex gap-2 lg:gap-8 text-xs mb-8 lg:mb-0 not:supports-[color-mi"
+<aside
+  aria-label="Color theme"
+  class:list={[
+    "lg:fixed lg:left-4 lg:top-4 lg:bottom-4 lg:[writing-mode:tb-rl]",
+    "hidden gap-2 lg:gap-6 supports-[color:color-mix(in_hsl,#fff,#fff_50%)]:flex items-center",
+    "text-xs mb-8 lg:mb-0"
+  ]}
 >
-  <fieldset name="hue" class="flex gap-2">
-    <legend class="uppercase sr-only">Hue</legend>
+  <fieldset name="hue" class="flex gap-2" aria-labelledby="hue">
+    <legend class="uppercase sr-only" id="hue">Hue</legend>
     {
       colors.map((color) => (
-        <label>
-          <input
-            type="radio"
-            name="hue"
-            id={`hue-${color}`}
-            value={color}
-            class="hidden"
-          />
-          <label
-            for={`hue-${color}`}
-            style={`background-color: var(--color-${color})`}
-            class="w-5 h-5 inline-block"
-            title={color}
-          >
-            <span class="sr-only">{color}</span>
-          </label>
+        <input
+          type="radio"
+          name="hue"
+          id={`hue-${color}`}
+          value={color}
+          class="sr-only"
+          checked={color === defaultColor}
+        />
+        <label
+          for={`hue-${color}`}
+          style={`background-color: var(--color-${color})`}
+          class="w-5 h-5 inline-block outline-offset-2"
+          aria-label={color}
+          title={color}
+        >
+          <span class="sr-only">{color}</span>
         </label>
       ))
     }
+    <style>
+      input[name="hue"]:focus + label {
+        outline: 2px solid var(--active-hue);
+      }
+    </style>
   </fieldset>
   <label class="uppercase grid text-right grid-cols-[5ch_1fr] gap-3 w-full">
     <abbrev title="Saturation">Sat</abbrev>
@@ -40,7 +51,7 @@ const colors = ["flame", "brat", "revel", "indigo", "eggplant"];
       step="0.05"
     />
   </label>
-</div>
+</aside>
 
 <script is:inline>
   function getSelectedHue() {
@@ -50,7 +61,7 @@ const colors = ["flame", "brat", "revel", "indigo", "eggplant"];
         return radioButton.value;
       }
     }
-    return "brat";
+    return defaultColor;
   }
   const comps = {
     flame: 0.05,
@@ -59,23 +70,16 @@ const colors = ["flame", "brat", "revel", "indigo", "eggplant"];
     indigo: 0.15,
     eggplant: 0.35,
   };
+  const doc = document.documentElement;
   addEventListener("input", (event) => {
     const hue = getSelectedHue();
+    doc.style.setProperty("--active-hue", `var(--color-${hue})`);
     const saturation = document.getElementById("saturation").valueAsNumber;
+    doc.style.setProperty("--active-saturation", saturation);
     const comp = comps[hue];
-    document.documentElement.style.setProperty(
-      "--active-hue",
-      `var(--color-${hue})`,
-    );
-    document.documentElement.style.setProperty(
-      "--active-saturation",
-      saturation,
-    );
-    document.documentElement.style.setProperty("--active-comp", comp);
+    doc.style.setProperty("--active-comp", comp);
     // set theme color
-    const value = getComputedStyle(document.documentElement).getPropertyValue(
-      `--color-${hue}`,
-    );
+    const value = getComputedStyle(doc).getPropertyValue(`--color-${hue}`);
     document
       .querySelector('meta[name="theme-color"]')
       .setAttribute("content", value);
