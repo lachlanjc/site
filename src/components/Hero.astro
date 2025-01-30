@@ -31,7 +31,7 @@ allProjects = allProjects.sort((a, b) => {
   >
     Lachlan Campbell
   </h1>
-  <p class="my-6 text-lg/7 md:text-xl/9 text-pretty">
+  <p class="my-6 weight-book text-lg/7 md:text-xl/9 text-pretty">
     Worldwide web design engineer & artist.<br />
     This spring: finishing NYU Interactive Media Arts in NYC.<br />
     This summer: leading design engineering at <a
@@ -67,7 +67,7 @@ allProjects = allProjects.sort((a, b) => {
       Full bio
     </summary>
     <div class="grid gap-4 md:gap-6 p-2 md:grid-cols-[2fr_1fr]">
-      <p class="text-dark text-pretty font-mono-slabs">
+      <p class="text-dark text-pretty font-mono-slabs weight-book">
         I’m Lachlan Campbell (they/them, b. 2001), a design engineer & artist. I
         began working on open source back in middle school in central PA. At
         nonprofit  <a href="https://hackclub.com" class="font-sans"
@@ -99,18 +99,18 @@ allProjects = allProjects.sort((a, b) => {
     class="flex justify-center items-center gap-1 w-fit font-sans shadow-border rounded-full"
   >
     <span
-      class="weight-medium text-(--active-hue) bg-white px-4 py-2 rounded-full inline-block shadow-card"
+      class="text-(--active-hue) bg-white px-4 py-2 rounded-full inline-block shadow-card"
     >
       Projects
     </span>
     <a
-      class="px-4 py-2 rounded-full inline-flex items-start gap-2 transition-colors hover:bg-white/50"
+      class="px-4 py-2 rounded-full inline-flex items-start gap-2 transition-colors hover:bg-white/50 weight-book"
       href="https://notebook.lachlanjc.com"
     >
       Notebook <span aria-hidden class="opacity-40 align-top">↗</span>
     </a>
     <a
-      class="px-4 py-2 rounded-full inline-flex items-start gap-2 transition-colors hover:bg-white/50"
+      class="px-4 py-2 rounded-full inline-flex items-start gap-2 transition-colors hover:bg-white/50 weight-book"
       href="https://edu.lachlanjc.com"
     >
       Coursework <span aria-hidden class="opacity-40 align-top">↗</span>
@@ -161,3 +161,29 @@ allProjects = allProjects.sort((a, b) => {
     document.startViewTransition(() => toggleProjects(feat));
   });
 </script>
+
+<footer
+  class="max-md:mx-6 md:grid md:grid-cols-3 mt-12 uppercase font-mono-slabs text-sm tracking-wide"
+>
+  <p class="px-4 md:px-6 py-2 border-2 max-md:rounded-t-xl md:rounded-l-full">
+    Typeset in <a href="https://abcdinamo.com/typefaces/oracle" target="_blank"
+      >ABC Oracle</a
+    >
+  </p>
+  <p class="px-4 md:px-6 py-2 max-md:border-x-2 md:border-y-2 text-center">
+    Built with <a
+      href="https://astro.build"
+      target="_blank"
+      class="!bg-[bottom_center]">Astro</a
+    >
+  </p>
+  <p
+    class="px-4 md:px-6 py-2 border-2 max-md:rounded-b-xl md:rounded-r-full text-right"
+  >
+    Open source <a
+      href="https://github.com/lachlanjc/site"
+      target="_blank"
+      class="!bg-[bottom_right]">on GitHub</a
+    >
+  </p>
+</footer>

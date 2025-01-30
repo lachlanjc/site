@@ -96,7 +96,7 @@
 
 p a {
   background: linear-gradient(currentColor 0 0) no-repeat var(--p, 0) 100% /
-    var(--p, 100%) 0.1em;
+    var(--p, 100%) clamp(1.5px, 0.1em, 4px);
   transition:
     0.375s,
     background-position 0s;
@@ -112,7 +112,6 @@ p a {
 .weight-light {
   font-variation-settings: "wght" 300;
 }
-p,
 .weight-book {
   font-variation-settings: "wght" 350;
 }
