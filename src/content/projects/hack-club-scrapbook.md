@@ -2,7 +2,7 @@
 name: "Hack Club Scrapbook"
 cover: ./hack-club-scrapbook.webp
 coverAlt: "Masonry grid of social media posts under the yellow heading Hack Club Scrapbook"
-desc: "Designed & built a social network for Hack Clubbers during COVID."
+desc: "Designed & built a social network for then-isolated Hack Clubbers, still with hundreds of weekly actives today."
 color: "#f7ff00"
 url: "https://scrapbook.hackclub.com"
 year: 2020
