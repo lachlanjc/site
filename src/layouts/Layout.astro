@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
@@ -49,6 +50,7 @@ import "../styles/global.css";
       type="image/png"
       sizes="180x180"
     />
+    <Analytics />
   </head>
   <body class="bg-(--active-bg) text-(--active-text)">
     <main class="container mx-auto max-w-4xl py-12 mb-12 md:px-4">
