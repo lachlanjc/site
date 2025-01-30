@@ -27,7 +27,7 @@ allProjects = allProjects.sort((a, b) => {
     they/them
   </span>
   <h1
-    class="text-7xl lg:text-8xl font-bold text-(--active-hue) indent-[-.25ch] mt-2"
+    class="text-7xl lg:text-[6.7rem] weight-book text-(--active-hue) indent-[-.25ch] mt-2"
   >
     Lachlan Campbell
   </h1>
@@ -58,7 +58,6 @@ allProjects = allProjects.sort((a, b) => {
         fill="currentColor"
         width="24"
         height="24"
-        title="view-close"
       >
         <path
           d="M11.121,9.707c-0.39,-0.391 -1.024,-0.391 -1.414,0c-0.391,0.39 -0.391,1.024 0,1.414l4.95,4.95l-4.95,4.95c-0.391,0.39 -0.391,1.023 0,1.414c0.39,0.39 1.024,0.39 1.414,0l4.95,-4.95l4.95,4.95c0.39,0.39 1.023,0.39 1.414,0c0.39,-0.391 0.39,-1.024 0,-1.414l-4.95,-4.95l4.95,-4.95c0.39,-0.39 0.39,-1.024 0,-1.414c-0.391,-0.391 -1.024,-0.391 -1.414,0l-4.95,4.95l-4.95,-4.95Z"
@@ -68,18 +67,15 @@ allProjects = allProjects.sort((a, b) => {
       Full bio
     </summary>
     <div class="grid gap-4 md:gap-6 p-2 md:grid-cols-[2fr_1fr]">
-      <p
-        class="text-dark text-pretty"
-        style="font-feature-settings: 'ss17' on;"
-      >
+      <p class="text-dark text-pretty font-mono-slabs">
         I’m Lachlan Campbell (they/them, b. 2001), a design engineer & artist. I
         began working on open source back in middle school in central PA. At
-        nonprofit  <a href="https://hackclub.com" class="font-bold font-sans"
+        nonprofit  <a href="https://hackclub.com" class="font-sans"
           >Hack&nbsp;Club</a
         > over 2017–20, I led storytelling & built programs for 30K+ teenagers to
         start coding, and organized hackathons. In 2021, I joined <a
           href="https://watershed.com"
-          class="font-bold font-sans">Watershed</a
+          class="font-sans">Watershed</a
         > (as #12) to help companies decarbonize, launching their website, a rebranding,
         and starting a design system. Now in NYU Tisch’s undergraduate program in
         Interactive Media Arts, I’m fabricating art with code & hardware between
@@ -103,7 +99,7 @@ allProjects = allProjects.sort((a, b) => {
     class="flex justify-center items-center gap-1 w-fit font-sans shadow-border rounded-full"
   >
     <span
-      class="font-bold text-(--active-hue) bg-white px-4 py-2 rounded-full inline-block shadow-card"
+      class="weight-medium text-(--active-hue) bg-white px-4 py-2 rounded-full inline-block shadow-card"
     >
       Projects
     </span>
@@ -111,41 +107,13 @@ allProjects = allProjects.sort((a, b) => {
       class="px-4 py-2 rounded-full inline-flex items-start gap-2 transition-colors hover:bg-white/50"
       href="https://notebook.lachlanjc.com"
     >
-      Notebook
-      <svg
-        width="10"
-        height="10"
-        viewBox="0 0 10 10"
-        fill="currentColor"
-        class="opacity-40 mt-1"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M6.90951 7.25437C6.85951 7.80437 7.2649 8.29077 7.81491 8.34077C8.36491 8.39077 8.8513 7.98547 8.9013 7.43547L8.90141 7.43377C9.31961 5.57717 9.3196 4.16297 9.0685 1.66124C9.0027 1.28688 8.88841 0.903258 8.61251 0.627367C8.33661 0.351488 7.95301 0.237188 7.57861 0.171378C5.07701 -0.079712 3.6628 -0.079712 1.805 0.338538C1.2662 0.459848 0.849103 0.874997 0.899104 1.42502C0.949103 1.97503 1.4355 2.38037 1.9855 2.33038L2.1956 2.31136C3.68407 2.17653 4.57822 2.09554 5.73211 2.0936L5.73362 2.09512L0.292893 7.53585C-0.0976311 7.92637 -0.0976311 8.55953 0.292893 8.95006C0.683417 9.34058 1.31658 9.34058 1.70711 8.95006L7.1453 3.51187C7.14197 4.64454 7.06279 5.53391 6.93781 6.93647L6.90951 7.25437Z"
-        >
-        </path>
-      </svg>
+      Notebook <span aria-hidden class="opacity-40 align-top">↗</span>
     </a>
     <a
       class="px-4 py-2 rounded-full inline-flex items-start gap-2 transition-colors hover:bg-white/50"
       href="https://edu.lachlanjc.com"
     >
-      Coursework
-      <svg
-        width="10"
-        height="10"
-        viewBox="0 0 10 10"
-        fill="currentColor"
-        class="opacity-40 mt-1"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M6.90951 7.25437C6.85951 7.80437 7.2649 8.29077 7.81491 8.34077C8.36491 8.39077 8.8513 7.98547 8.9013 7.43547L8.90141 7.43377C9.31961 5.57717 9.3196 4.16297 9.0685 1.66124C9.0027 1.28688 8.88841 0.903258 8.61251 0.627367C8.33661 0.351488 7.95301 0.237188 7.57861 0.171378C5.07701 -0.079712 3.6628 -0.079712 1.805 0.338538C1.2662 0.459848 0.849103 0.874997 0.899104 1.42502C0.949103 1.97503 1.4355 2.38037 1.9855 2.33038L2.1956 2.31136C3.68407 2.17653 4.57822 2.09554 5.73211 2.0936L5.73362 2.09512L0.292893 7.53585C-0.0976311 7.92637 -0.0976311 8.55953 0.292893 8.95006C0.683417 9.34058 1.31658 9.34058 1.70711 8.95006L7.1453 3.51187C7.14197 4.64454 7.06279 5.53391 6.93781 6.93647L6.90951 7.25437Z"
-        >
-        </path>
-      </svg>
+      Coursework <span aria-hidden class="opacity-40 align-top">↗</span>
     </a>
   </nav>
   <label class="inline-flex items-center gap-2 shrink-0">
