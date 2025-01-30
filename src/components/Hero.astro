@@ -36,8 +36,7 @@ allProjects = allProjects.sort((a, b) => {
     This spring: finishing NYU Interactive Media Arts in NYC.<br />
     This summer: leading design engineering at <a
       href="https://watershed.com"
-      class="underline underline-offset-5 hover:underline-offset-3 transition-[text-underline-offset]"
-      >Watershed</a
+      class="font-sans">Watershed</a
     > in SF.
   </p>
   <details
@@ -74,14 +73,13 @@ allProjects = allProjects.sort((a, b) => {
         style="font-feature-settings: 'ss17' on;"
       >
         I’m Lachlan Campbell (they/them, b. 2001), a design engineer & artist. I
-        began working on open source baack in middle school in central PA. At
-        nonprofit  <a
-          href="https://hackclub.com"
-          class="font-bold underline underline-offset-4">Hack&nbsp;Club</a
+        began working on open source back in middle school in central PA. At
+        nonprofit  <a href="https://hackclub.com" class="font-bold font-sans"
+          >Hack&nbsp;Club</a
         > over 2017–20, I led storytelling & built programs for 30K+ teenagers to
         start coding, and organized hackathons. In 2021, I joined <a
           href="https://watershed.com"
-          class="font-bold underline underline-offset-4">Watershed</a
+          class="font-bold font-sans">Watershed</a
         > (as #12) to help companies decarbonize, launching their website, a rebranding,
         and starting a design system. Now in NYU Tisch’s undergraduate program in
         Interactive Media Arts, I’m fabricating art with code & hardware between
@@ -167,25 +165,26 @@ allProjects = allProjects.sort((a, b) => {
 </section>
 
 <script is:inline>
+  function toggleProjects(feat) {
+    const projects = document.querySelectorAll('[data-featured="false"]');
+    projects.forEach((project) => {
+      if (feat) {
+        project.setAttribute("hidden", true);
+      } else {
+        project.removeAttribute("hidden");
+      }
+    });
+  }
+
   const savedValue = sessionStorage.getItem("highlights");
   if (savedValue === "false") {
     document.getElementById("highlights").checked = false;
+    toggleProjects(false);
   }
 
   document.getElementById("highlights").addEventListener("change", (event) => {
     const feat = event.target.checked;
     sessionStorage.setItem("highlights", feat);
-
-    function toggleProjects(feat) {
-      const projects = document.querySelectorAll('[data-featured="false"]');
-      projects.forEach((project) => {
-        if (feat) {
-          project.setAttribute("hidden", true);
-        } else {
-          project.removeAttribute("hidden");
-        }
-      });
-    }
 
     if (!document.startViewTransition) {
       toggleProjects(feat);

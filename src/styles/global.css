@@ -94,6 +94,18 @@
   } */
 }
 
+p a {
+  background: linear-gradient(currentColor 0 0) no-repeat var(--p, 0) 100% /
+    var(--p, 100%) 0.1em;
+  transition:
+    0.375s,
+    background-position 0s;
+
+  &:hover {
+    --p: 0%;
+  }
+}
+
 .rounded-edges {
   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 12px);
 }
