@@ -1,6 +1,6 @@
 ---
 name: "Watershed Rebrand"
-desc: Designed a new logo, brand system, and website, still scaling today, alongside Meghan Newell.
+desc: Designed a new logo, brand system, and website, which are all still scaling today, alongside Meghan Newell.
 cover: ./watershed-rebrand.png
 coverAlt: "Watershed logo against a cream background"
 url: "https://watershed.com/brand"
