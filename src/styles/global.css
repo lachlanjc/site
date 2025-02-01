@@ -106,6 +106,7 @@ p a {
   }
 }
 
+p,
 .font-mono-slabs {
   font-feature-settings: "ss17" on;
 }
