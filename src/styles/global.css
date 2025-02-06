@@ -31,11 +31,13 @@
   src: url("/fonts/ABCOracleTripleVariable.woff2") format("woff2");
   font-family: "ABCOracleTriple";
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   src: url("/fonts/ABCOraclePlusVariable.woff2") format("woff2");
   font-family: "ABCOraclePlus";
   font-style: normal;
+  font-display: swap;
 }
 
 @theme {
