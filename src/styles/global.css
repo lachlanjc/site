@@ -45,13 +45,8 @@
   --font-triple: "ABCOracleTriple", TripleFallback, monospace;
   --font-sans: "ABCOraclePlus", PlusFallback, sans-serif;
 
-  --color-candy: oklch(0.92 0.08 328.08);
   --color-flame: oklch(0.7 0.24 32.74);
   --color-brat: oklch(0.67 0.18 117.23);
-  --color-revel: oklch(0.37 0.1 110.52);
-  --color-indigo: oklch(0.4 0.25 265.2);
-  --color-eggplant: oklch(0.27 0.09 311.48);
-
   --color-light: #f4e1f9;
   --color-muted: #6870b0;
   --color-lavender: #a4aeff;
@@ -88,6 +83,13 @@
 }
 
 :root {
+  --color-candy: oklch(0.92 0.08 328.08);
+  --color-flame: oklch(0.7 0.24 32.74);
+  --color-brat: oklch(0.67 0.18 117.23);
+  --color-revel: oklch(0.37 0.1 110.52);
+  --color-indigo: oklch(0.4 0.25 265.2);
+  --color-eggplant: oklch(0.27 0.09 311.48);
+
   --active-hue: var(--color-brat);
   --active-saturation: 0.5;
   --active-bg: oklch(

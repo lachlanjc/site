@@ -1,21 +1,21 @@
 ---
-import Color from "./Color.astro";
-import Socials from "./Socials.astro";
-import Project from "./Project.astro";
-import { getCollection, getEntry } from "astro:content";
-import { Image } from "astro:assets";
-import portrait from "../assets/portraits/berlin.jpg";
+import Color from "./Color.astro"
+import Socials from "./Socials.astro"
+import Project from "./Project.astro"
+import { getCollection, getEntry } from "astro:content"
+import { Image } from "astro:assets"
+import portrait from "../assets/portraits/berlin.jpg"
 
-let allProjects = await getCollection("projects");
+let allProjects = await getCollection("projects")
 // sort by year, descending, then featured, true then false, then name
 allProjects = allProjects.sort((a, b) => {
-  if (a.data.year > b.data.year) return -1;
-  if (a.data.year < b.data.year) return 1;
-  if (a.data.feat && !b.data.feat) return -1;
-  if (!a.data.feat && b.data.feat) return 1;
-  if (a.data.name < b.data.name) return -1;
-  return 0;
-});
+  if (a.data.year > b.data.year) return -1
+  if (a.data.year < b.data.year) return 1
+  if (a.data.feat && !b.data.feat) return -1
+  if (!a.data.feat && b.data.feat) return 1
+  if (a.data.name < b.data.name) return -1
+  return 0
+})
 ---
 
 <header class="px-4 md:px-0 font-triple">
@@ -36,8 +36,10 @@ allProjects = allProjects.sort((a, b) => {
     This spring: finishing NYU Interactive Media Arts in NYC.<br />
     This summer: leading design engineering at <a
       href="https://watershed.com"
-      class="font-sans">Watershed</a
-    > in SF.
+      class="font-sans"
+    >
+      Watershed
+    </a> in SF.
   </p>
   <details
     class="group mb-8 rounded-[24px] p-2 shadow-border open:shadow-none open:bg-lavender transition-colors grid"
@@ -70,13 +72,15 @@ allProjects = allProjects.sort((a, b) => {
       <p class="text-dark text-pretty font-mono-slabs weight-book">
         I’m Lachlan Campbell (they/them, b. 2001), a design engineer & artist. I
         began working on open source back in middle school in central PA. At
-        nonprofit  <a href="https://hackclub.com" class="font-sans"
-          >Hack&nbsp;Club</a
-        > over 2017–20, I led storytelling & built programs for 30K+ teenagers to
-        start coding, and organized hackathons. In 2021, I joined <a
+        nonprofit  <a href="https://hackclub.com" class="font-sans">
+          Hack&nbsp;Club
+        </a> over 2017–20, I led storytelling & built programs for 30K+ teenagers
+        to start coding, and organized hackathons. In 2021, I joined <a
           href="https://watershed.com"
-          class="font-sans">Watershed</a
-        > (as #12) to help companies decarbonize, launching their website, a rebranding,
+          class="font-sans"
+        >
+          Watershed
+        </a> (as #12) to help companies decarbonize, launching their website, a rebranding,
         and starting a design system. Now in NYU Tisch’s undergraduate program in
         Interactive Media Arts, I’m fabricating art with code & hardware between
         New&nbsp;York & Berlin. After graduating in May, I’ll return to Watershed
@@ -134,48 +138,50 @@ allProjects = allProjects.sort((a, b) => {
 
 <script is:inline>
   function toggleProjects(feat) {
-    const projects = document.querySelectorAll('[data-featured="false"]');
+    const projects = document.querySelectorAll('[data-featured="false"]')
     projects.forEach((project) => {
       if (feat) {
-        project.setAttribute("hidden", true);
+        project.setAttribute("hidden", true)
       } else {
-        project.removeAttribute("hidden");
+        project.removeAttribute("hidden")
       }
-    });
+    })
   }
 
-  const savedValue = sessionStorage.getItem("highlights");
+  const savedValue = sessionStorage.getItem("highlights")
   if (savedValue === "false") {
-    document.getElementById("highlights").checked = false;
-    toggleProjects(false);
+    document.getElementById("highlights").checked = false
+    toggleProjects(false)
   }
 
   document.getElementById("highlights").addEventListener("change", (event) => {
-    const feat = event.target.checked;
-    sessionStorage.setItem("highlights", feat);
+    const feat = event.target.checked
+    sessionStorage.setItem("highlights", feat)
 
     if (!document.startViewTransition) {
-      toggleProjects(feat);
-      return;
+      toggleProjects(feat)
+      return
     }
-    document.startViewTransition(() => toggleProjects(feat));
-  });
+    document.startViewTransition(() => toggleProjects(feat))
+  })
 </script>
 
 <footer
-  class="max-md:mx-6 md:grid md:grid-cols-3 mt-12 uppercase font-mono-slabs text-sm tracking-wide"
+  class="max-md:mx-6 md:grid md:grid-cols-3 mt-12 md:mt-32 uppercase font-mono-slabs text-sm tracking-wide"
 >
   <p class="px-4 md:px-6 py-2 border-2 max-md:rounded-t-xl md:rounded-l-full">
-    Typeset in <a href="https://abcdinamo.com/typefaces/oracle" target="_blank"
-      >ABC Oracle</a
-    >
+    Typeset in <a href="https://abcdinamo.com/typefaces/oracle" target="_blank">
+      ABC Oracle
+    </a>
   </p>
   <p class="px-4 md:px-6 py-2 max-md:border-x-2 md:border-y-2 text-center">
     Built with <a
       href="https://astro.build"
       target="_blank"
-      class="!bg-[bottom_center]">Astro</a
+      class="!bg-[bottom_center]"
     >
+      Astro
+    </a>
   </p>
   <p
     class="px-4 md:px-6 py-2 border-2 max-md:rounded-b-xl md:rounded-r-full text-right"
@@ -183,7 +189,9 @@ allProjects = allProjects.sort((a, b) => {
     Open source <a
       href="https://github.com/lachlanjc/site"
       target="_blank"
-      class="!bg-[bottom_right]">on GitHub</a
+      class="!bg-[bottom_right]"
     >
+      on GitHub
+    </a>
   </p>
 </footer>
