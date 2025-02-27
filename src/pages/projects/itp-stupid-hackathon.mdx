@@ -4,8 +4,18 @@
 import Layout from "~/layouts/Layout.astro"
 import Color from "~/components/Color.astro"
 
-<Layout title="ITP Stupid Hackathon 2025" className="prose prose-h1:text-6xl prose-a:no-underline prose-a:weight-medium [&_figcaption]:-mt-6 [&_figcaption]:color-inherit prose-img:rounded-lg prose-p:first-of-type:max-w-2xl prose-p:first-of-type:-mt-8 prose-p:first-of-type:text-xl container py-4 md:py-20 px-4 mx-auto max-w-4xl">
+<Layout
+  title="ITP Stupid Hackathon 2025"
+  img="https://lachlanjc.com/itp-stupid-hackathon/opengraph-image.webp"
+  className="prose prose-h1:text-6xl prose-a:no-underline prose-a:weight-medium [&_figcaption]:-mt-6 [&_figcaption]:color-inherit prose-img:not:first-of-type:rounded-lg prose-p:first-of-type:max-w-2xl prose-p:first-of-type:-mt-8 prose-p:first-of-type:text-xl container py-4 md:py-20 px-4 mx-auto max-w-4xl">
+
 <Color />
+
+<style is:global>{`
+  :root {
+    --active-hue: #EA509F;
+  }
+`}</style>
 
 <a href="/" class="text-sm font-triple block max-md:mt-20">
   &larr; @lachlanjc
@@ -16,11 +26,15 @@ import Color from "~/components/Color.astro"
 In February 2025, I co-organized with [Anshula Saha](https://anshulasaha.com) the 10th annual [ITP&nbsp;Stupid Hackathon](https://itpstupidhackathon.online), a 12-hour hackathon at NYU’s ITP for creating useless projects with 50-something participants.
 
 - [Website](https://itpstupidhackathon.online)
-- [Website source code](https://github.com/anshulasaha/stupidhackathon2025)
-- [Figma assets](https://www.figma.com/community/file/1477015551715705455)
 - [Coverage in Washington Square News](https://nyunews.com/culture/2025/02/27/itp-stupid-hackathon/)
 
 ![Posters](~/content/projects/itp-stupid-hackathon/posters.webp)
+
+Our open source materials:
+
+- [Posters, signage, and badge designs on Figma](https://www.figma.com/community/file/1477015551715705455)
+- [Intro presentation slides on Figma](https://www.figma.com/community/file/1477065435953232521/2025-itp-stupid-hackathon-intro-slides)
+- [Website source code](https://github.com/anshulasaha/stupidhackathon2025)
 
 This event is an ITP tradition, previously hosted in:
 
@@ -208,7 +222,7 @@ This event is an ITP tradition, previously hosted in:
 </blockquote>
 </div>
 
-![Workspace in the shop](~/content/projects/itp-stupid-hackathon/workspace-shop.webp)
+![Hackers in the fabrication studio, with the nearest hacker wearing a green jumpsuit surrounded by vapes hooked up to multimeters and an Arduino](~/content/projects/itp-stupid-hackathon/workspace-shop.webp)
 
 ![Workspace](~/content/projects/itp-stupid-hackathon/workspace.webp)
 
@@ -219,14 +233,13 @@ This event is an ITP tradition, previously hosted in:
 
 ![Chomp](~/content/projects/itp-stupid-hackathon/chomp.webp)
 
-![Fish](~/content/projects/itp-stupid-hackathon/fish.webp)
+![Portrait of two hackers holding plastic fish, one wearing a frog hat and the other a cowboy hat, in front of soldering equipment and laptops in the workshop](~/content/projects/itp-stupid-hackathon/fish.webp)
 
 ![Lachlan & Anshula discussing a 3D model of a poop dollop on a laptop screen](~/content/projects/itp-stupid-hackathon/3d-model.webp)
 
 ![Organizers](~/content/projects/itp-stupid-hackathon/organizers.webp)
 
-![Participants working on a small table covered with fabric and various
-  electronic components](~/content/projects/itp-stupid-hackathon/table.webp)
+![3 students hold a camera on a dowel over a table wearing hot pink booties, surrounded by a laptop and fabric and electronics](~/content/projects/itp-stupid-hackathon/table.webp)
 ![Hot gluing elements onto
   table](~/content/projects/itp-stupid-hackathon/table-glue.webp)
 
