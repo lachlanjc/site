@@ -1,6 +1,12 @@
 ---
-import "../styles/global.css";
-import Analytics from "@vercel/analytics/astro";
+const {
+  title = "Lachlan Campbell – @lachlanjc",
+  desc = "Worldwide web design engineer in NYC, working on climate at Watershed. NYU ’25, Interactive Media Arts.",
+  img = "https://lachlanjc.com/opengraph-image.jpg",
+  className = "container mx-auto max-w-4xl py-12 md:px-4",
+} = Astro.props
+import "../styles/global.css"
+import Analytics from "@vercel/analytics/astro"
 ---
 
 <!doctype html>
@@ -11,32 +17,17 @@ import Analytics from "@vercel/analytics/astro";
     <meta name="generator" content={Astro.generator} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Lachlan Campbell" />
-    <meta property="og:url" content="https://lachlanjc.com/" />
+    <!-- <meta property="og:url" content="https://lachlanjc.com/" /> -->
     <meta name="twitter:site" content="@lachlanjc" />
-    <title>Lachlan Campbell – @lachlanjc</title>
-    <meta property="og:title" content="Lachlan Campbell – @lachlanjc" />
-    <meta name="twitter:title" content="Lachlan Campbell – @lachlanjc" />
-    <meta
-      name="description"
-      content="Worldwide web design engineer in NYC, working on climate at Watershed. NYU ’25, Interactive Media Arts."
-    />
-    <meta
-      property="og:description"
-      content="Worldwide web design engineer in NYC, working on climate at Watershed. NYU ’25, Interactive Media Arts."
-    />
-    <meta
-      name="twitter:description"
-      content="Worldwide web design engineer in NYC, working on climate at Watershed. NYU ’25, Interactive Media Arts."
-    />
-    <meta
-      property="og:image"
-      content="https://lachlanjc.com/opengraph-image.jpg"
-    />
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta name="twitter:title" content={title} />
+    <meta name="description" content={desc} />
+    <meta property="og:description" content={desc} />
+    <meta name="twitter:description" content={desc} />
+    <meta property="og:image" content={img} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:image"
-      content="https://lachlanjc.com/opengraph-image.jpg"
-    />
+    <meta name="twitter:image" content={img} />
     <meta name="theme-color" content="oklch(0.67 0.18 117.23)" />
     <link
       rel="icon"
@@ -53,7 +44,7 @@ import Analytics from "@vercel/analytics/astro";
     <Analytics />
   </head>
   <body class="bg-(--active-bg) text-(--active-text)">
-    <main class="container mx-auto max-w-4xl py-12 md:px-4">
+    <main class={className}>
       <slot />
     </main>
   </body>

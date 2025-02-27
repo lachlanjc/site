@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.1.0",
+    "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.9",
     "@vercel/analytics": "^1.5.0",
     "astro": "^5.4.0",

@@ -9,6 +9,7 @@
 }
 
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @font-face {
   font-family: PlusFallback;
@@ -57,16 +58,17 @@
   --color-dark: #1527c6;
 
   --shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
-  --shadow-inset: inset 0 0 0 1px rgba(0, 0, 0, 0.08),
-    0 2px 2px rgba(0, 0, 0, 0.04);
+  --shadow-inset:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.04);
   --shadow-text: 0 1px 2px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.125);
-  --shadow-small: 0 1px 2px rgba(0, 0, 0, 0.0625),
-    0 2px 4px rgba(0, 0, 0, 0.0625);
-  --shadow-card: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 1px 1px rgba(0, 0, 0, 0.02),
+  --shadow-small:
+    0 1px 2px rgba(0, 0, 0, 0.0625), 0 2px 4px rgba(0, 0, 0, 0.0625);
+  --shadow-card:
+    0 0 0 1px rgba(0, 0, 0, 0.08), 0 1px 1px rgba(0, 0, 0, 0.02),
     0 4px 8px -4px rgba(0, 0, 0, 0.04), 0 16px 24px -8px rgba(0, 0, 0, 0.06);
-  --shadow-elevated: 0 0 0 1px rgba(0, 0, 0, 0.08),
-    0 1px 1px rgba(0, 0, 0, 0.02), 0 8px 16px -4px rgba(0, 0, 0, 0.04),
-    0 24px 32px -8px rgba(0, 0, 0, 0.06);
+  --shadow-elevated:
+    0 0 0 1px rgba(0, 0, 0, 0.08), 0 1px 1px rgba(0, 0, 0, 0.02),
+    0 8px 16px -4px rgba(0, 0, 0, 0.04), 0 24px 32px -8px rgba(0, 0, 0, 0.06);
 }
 
 @property --active-hue {
@@ -111,6 +113,11 @@
   } */
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+li a,
 p a {
   background: linear-gradient(currentColor 0 0) no-repeat var(--p, 0) 100% /
     var(--p, 100%) clamp(1.5px, 0.1em, 4px);
@@ -141,6 +148,29 @@ p,
 }
 .weight-bold {
   font-variation-settings: "wght" 700;
+}
+
+.prose {
+  --tw-prose-headings: var(--active-text);
+  --tw-prose-body: var(--active-text);
+  --tw-prose-links: var(--active-hue);
+  --tw-prose-captions: var(--active-muted);
+  --tw-prose-counters: var(--active-muted);
+  --tw-prose-bullets: color-mix(
+    in oklab,
+    var(--active-muted),
+    lch(0 0 0 / 0) 50%
+  );
+}
+.prose figcaption,
+.prose h1,
+.prose h2 {
+  font-family: var(--font-triple);
+  font-feature-settings: "ss17" on;
+  font-variation-settings: "wght" 400;
+}
+.prose a {
+  font-weight: inherit;
 }
 
 .rounded-edges {
