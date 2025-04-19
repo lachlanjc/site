@@ -9,13 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.1.0",
+    "@astrojs/mdx": "^4.2.4",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.0.9",
+    "@tailwindcss/vite": "^4.1.4",
     "@vercel/analytics": "^1.5.0",
-    "astro": "^5.4.0",
-    "prettier": "^3.5.2",
+    "astro": "^5.7.4",
+    "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
-    "tailwindcss": "^4.0.9"
+    "tailwindcss": "^4.1.4"
   }
 }
