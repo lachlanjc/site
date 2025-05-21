@@ -1,0 +1,71 @@
+---
+import Layout from "~/layouts/Layout.astro"
+import Color from "~/components/Color.astro"
+import { Image } from "astro:assets"
+import imgBigFront from "~/content/projects/b2tm-bloom/45.webp"
+import imgBigSide from "~/content/projects/b2tm-bloom/AD_GoBag_Big5684_920x1200_c1813c8f-5600-4f24-87d0-af10a03ac265.webp"
+import imgBigTop from "~/content/projects/b2tm-bloom/AD_GoBag_Big5731.jpeg"
+import imgMini1 from "~/content/projects/b2tm-bloom/AD_GoBag_Mini6020.jpeg"
+import imgMini2 from "~/content/projects/b2tm-bloom/AD_GoBag_Mini6029.jpeg"
+import imgSmallBack from "~/content/projects/b2tm-bloom/MV_GoBag_Small6125_920x1200_72bb14ec-eb47-4b98-bb17-382345851528.webp"
+import imgSmallShoulder from "~/content/projects/b2tm-bloom/MV_GoBag_Small6127_920x1200_c487b364-7edb-45f3-a9d6-1d69dc448c0b.webp"
+import imgSmallFront from "~/content/projects/b2tm-bloom/MV_GoBag_Small6129_920x1200_ecd1cd7a-5adf-4dee-9007-554b45fe2641.webp"
+import imgCrescent from "~/content/projects/b2tm-bloom/MV_GoBag_Mini5980.jpeg"
+---
+
+<Layout
+  title="Baboon to the Moon: Bloom"
+  img="https://lachlanjc.com/itp-stupid-hackathon/opengraph-image.webp"
+  className="py-4 md:py-20 flex flex-col gap-12 md:gap-24 "
+>
+  <style is:global>
+    :root {
+      --active-hue: #41428f;
+    }
+  </style>
+  <header
+    class="container mx-auto max-w-4xl prose prose-h1:text-6xl prose-a:no-underline prose-a:weight-medium px-4"
+  >
+    <a
+      href="/"
+      class="text-xl font-triple block -mt-12 py-4 font-mono-slabs transition-transform hover:-translate-x-6"
+    >
+      &larr; @lachlanjc
+    </a>
+    <h1 id="baboon-to-the-moon-bloom" class="mb-0">B2TM: Bloom</h1>
+    <p class="text-xl">
+      Modeling for the
+      <a href="https://baboontothemoon.com">Baboon to the Moon</a> Spring 2025 collection,
+      Bloom.
+    </p>
+  </header>
+  <Image
+    src={imgBigTop}
+    alt="Lachlan looking straight at camera over a turquoise backpack"
+    class="max-h-screen mx-auto w-auto"
+  />
+  <div class="grid grid-cols-2 container max-w-6xl px-4 gap-8 mx-auto -mt-12">
+    <Image src={imgBigFront} alt="Lachlan with bag slung over shoulder" />
+    <Image src={imgBigSide} alt="Lachlan wearing backpack, side angle" />
+  </div>
+  <div class="grid grid-cols-2 container max-w-6xl px-4 gap-8 mx-auto">
+    <Image
+      src={imgMini1}
+      alt="Lachlan wearing a backpack by one strap with flowers behind"
+    />
+    <Image
+      src={imgMini2}
+      alt="Lachlan wearing a backpack by one strap with flowers behind"
+    />
+  </div>
+  <div class="grid grid-cols-3">
+    <Image src={imgSmallShoulder} alt="Lachlan with bag slung over shoulder" />
+    <Image src={imgSmallBack} alt="Lachlan with bag slung back" />
+    <Image src={imgSmallFront} alt="Lachlan reaching into the bag pocket" />
+  </div>
+  <Image
+    src={imgCrescent}
+    alt="Lachlan wearing a crescent-shaped bag"
+    class="max-h-screen mx-auto w-auto"
+  />
+</Layout>
