@@ -1,0 +1,174 @@
+---
+import Layout from "~/layouts/Layout.astro"
+import { Image } from "astro:assets"
+import imgPortrait from "~/content/projects/american-toxics/portrait.jpeg"
+import imgDesk from "~/content/projects/american-toxics/desk.jpeg"
+
+import imgTimeline from "~/content/projects/american-toxics/timeline.jpeg"
+
+import imgMobileDetail from "~/content/projects/american-toxics/mobile-detail.jpeg"
+import imgMobile from "~/content/projects/american-toxics/mobile.jpeg"
+
+import imgGroup1 from "~/content/projects/american-toxics/group-1.jpeg"
+import imgGroup2 from "~/content/projects/american-toxics/group-2.jpeg"
+
+import imgGuide from "~/content/projects/american-toxics/guide.jpeg"
+import imgPins from "~/content/projects/american-toxics/pins.jpeg"
+import imgFence from "~/content/projects/american-toxics/fence.jpeg"
+
+import imgClusters from "~/content/projects/american-toxics/full-tsne-loose-half.jpeg"
+---
+
+<Layout
+  title="American Toxics"
+  img="https://lachlanjc.com/itp-stupid-hackathon/opengraph-image.webp"
+  className="flex flex-col gap-12 md:gap-24"
+>
+  <style is:global>
+    :root {
+      --active-hue: #ff4921;
+    }
+  </style>
+  <div class="grid md:grid-cols-2">
+    <header class="pt-4 pb-8 md:py-20 container mx-auto max-w-xl px-4 prose prose-h1:text-6xl prose-a:no-underline prose-a:weight-medium">
+      <a
+        href="/"
+        class="text-xl font-triple block md:-mt-12 py-4 font-mono-slabs transition-transform hover:-translate-x-6"
+      >
+        &larr; @lachlanjc
+      </a>
+      <h1 class="mb-0">American Toxics</h1>
+      <p>
+        In spring 2025, I discovered that my preschool in my beautiful hometown of State College, PA was next to a toxic waste site. And 23% of Americans live within 3 miles of one of the 1,800+ toxic sites in the U.S. at which the federal government (slowly) manages cleanup. Meanwhile, relevant tools and documentation are rapidly disappearing from government websites.
+      </p>
+      <p>
+        I began by building <a href="https://americantoxics.com">americantoxics.com</a>, a website that maps every high-priority Superfund site. I used GPT-4.1 to summarize the documentation in government archives, and made a website that makes navigating this dataset easier. It’s <a href="https://github.com/lachlanjc/superfund">open&nbsp;source</a>.
+      </p>
+      <p>
+        As part of my thesis project at NYU IMA, this project morphed into a full gallery installation. Across 8 pieces, spanning a 50-foot timeline, large-format prints, a satellite map, sound, a hanging mobile of laser-cut icons, a jar of toxic sludge, and more, I presented the scale of these sites nationwide and zoomed in on this story surrounding my preschool. The&nbsp;installation was exhibited at the ITP Spring Show 2025 in Downtown Brooklyn for thousands of visitors.
+      </p>
+      <p>
+        <a href="https://edu.lachlanjc.com/2025-05-09_caps_american_toxics">Read more background here.</a>
+      </p>
+    </header>
+    <Image
+      src={imgPortrait}
+      alt="Whole project"
+      class="max-h-screen w-auto md:ml-auto"
+    />
+  </div>
+  <div class="container max-w-6xl mx-auto">
+    <mux-player playback-id="mlVIC01OQa7IgpvO4pB02iyDz1vIkXbS3cAc2h5bjII2g" colo></mux-player>
+    <script>
+      import '@mux/mux-player';
+    </script>
+    <div class="grid gap-4 lg:grid-cols-[1fr_auto] mt-4">
+    <p class="font-triple text-sm max-md:px-4 text-balance">Preliminary video of my thesis presentation, May 2025. The first few seconds are missing; better footage coming soon.</p>
+    <p class="text-sm max-md:px-4 text-balance text-[#ff4921]"><a href="https://www.figma.com/deck/M8FZXm15cVEVJ8dsHnkDUF/American-Toxics?node-id=4051-364&t=UMlo1Yw8nRunHvAU-1">Open presentation slides &rarr;</a></p>
+    </div>
+  </div>
+  <div
+    class="prose container max-w-4xl max-md:px-4 mx-auto -mb-6 md:-mb-12 prose-h2:!font-sans prose-h2:!text-3xl prose-h2:mb-2 prose-p:text-balance"
+  >
+    <h2>Timeline</h2>
+    <p>
+      A 50-foot chronological timeline of all nearly 2,000 Superfund sites as
+      they were officially listed by the EPA, all printed on one roll of paper.
+    </p>
+  </div>
+  <Image src={imgTimeline} alt="Close-up of timeline" />
+
+  <div
+    class="prose container max-w-4xl max-md:px-4 mx-auto -mb-6 md:-mb-12 prose-h2:!font-sans prose-h2:!text-3xl prose-h2:mb-2 prose-p:text-pretty prose-p:max-w-2xl prose-a:no-underline"
+  >
+    <h2>Centrepiece</h2>
+    <p>
+      A high-resolution satellite map of my hometown in Centre County, PA,
+      centered on my preschool, is printed 40” square. A&nbsp;3” laser-cut map
+      of Pennsylvania orients viewers. A&nbsp;laser-cut fence outlines the
+      Superfund toxic waste site. Two photo installations show me at my
+      preschool in the early 2000s and the Superfund site, respectively. Pins
+      guide viewers through an associated AR guide. In the background, a
+      30-minute field recording from the site plays on loop. (Photos of the site
+      and field recording by <a href="https://alexisoltmer.com">
+        Alexis Oltmer
+      </a>.)
+    </p>
+  </div>
+  <div class="grid md:grid-cols-2 px-4 md:px-8 gap-4 md:gap-8 mx-auto">
+    <Image src={imgFence} alt="Lachlan reaching into the bag pocket" />
+    <Image src={imgPins} alt="Lachlan with bag slung back" />
+  </div>
+
+  <div
+    class="prose container max-w-4xl max-md:px-4 mx-auto -mb-6 md:-mb-12 prose-h2:!font-sans prose-h2:!text-3xl prose-h2:mb-2 prose-p:text-balance"
+  >
+    <h2>Mobile</h2>
+    <p>
+      Above the map of my preschool, a mobile hangs. Custom icons designed to
+      represent all 17&nbsp;“contaminated media” by the EPA (groundwater, soil,
+      air pollution, etc). Each icon is laser cut from acrylic, grouped by
+      ground/water/air, and strung from a wooden mobile.
+    </p>
+    <p>
+      A custom guide to these types of contamination is printed on a board for
+      viewers.
+    </p>
+  </div>
+  <div class="grid md:grid-cols-2 px-4 md:px-8 gap-4 md:gap-8 mx-auto">
+    <Image
+      src={imgMobile}
+      alt="Lachlan wearing a backpack by one strap with flowers behind"
+    />
+    <Image
+      src={imgMobileDetail}
+      alt="Lachlan wearing a backpack by one strap with flowers behind"
+    />
+    <Image
+      src={imgGuide}
+      alt="Lachlan with bag slung over shoulder"
+      class="md:col-span-2"
+    />
+  </div>
+
+  <div
+    class="prose container max-w-4xl max-md:px-4 mx-auto -mb-6 md:-mb-12 prose-h2:!font-sans prose-h2:!text-3xl prose-h2:mb-2 prose-p:text-balance prose-p:max-w-xl prose-a:no-underline"
+  >
+    <h2>Sludge Desk</h2>
+    <p>
+      {<!-- prettier-ignore -->}
+      At a small desk, viewers can browse <a href="https://americantoxics.com">the map/website</a>.
+    </p>
+    <p>
+      {<!-- prettier-ignore -->}
+      A glass jar of toxic sludge from the nearest Superfund&nbsp;site, <a href="https://americantoxics.com/sites/NYN000206222">Gowanus Canal</a>, sits next to the keyboard & trackpad.
+    </p>
+  </div>
+  <Image
+    src={imgDesk}
+    alt="Whole project"
+    class="max-h-screen mx-auto w-auto"
+  />
+
+  <div
+    class="grid md:grid-cols-2 md:items-center px-4 md:px-8 gap-4 md:gap-8 mx-auto"
+  >
+    <div
+      class="prose container max-w-xl mx-auto prose-h2:!font-sans prose-h2:!text-3xl prose-h2:mb-2 prose-a:no-underline"
+    >
+      <h2 class="text-3xl font-sans mb-2">Land Clusters</h2>
+      <p class="max-w-lg text-balance">
+        A satellite tile from each of the 1800+ Superfund sites in the U.S.
+        is&nbsp;grouped by visual similarity with the t-SNE machine learning
+        algorithm, revealing what contaminated land tends to look like. Printed
+        large-format (42”) and wall-mounted.
+      </p>
+    </div>
+    <Image
+      src={imgClusters}
+      alt="Grid of satellite imagery"
+      class="max-h-screen mx-auto w-auto"
+    />
+  </div>
+  <Image src={imgGroup1} alt="Lachlan with bag slung over shoulder" />
+</Layout>

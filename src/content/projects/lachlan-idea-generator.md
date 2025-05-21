@@ -6,5 +6,5 @@ coverAlt: "Bright green rounded box with 3 windows saying Artsy Fossil fuels Wea
 url: "https://edu.lachlanjc.com/2025-04-14_dfab_lachlan_idea_generator"
 color: "#c8dd1f"
 year: 2025
-feat: true
+feat: false
 ---

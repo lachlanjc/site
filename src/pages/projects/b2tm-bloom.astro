@@ -16,7 +16,7 @@ import imgCrescent from "~/content/projects/b2tm-bloom/MV_GoBag_Mini5980.jpeg"
 <Layout
   title="Baboon to the Moon: Bloom"
   img="https://lachlanjc.com/itp-stupid-hackathon/opengraph-image.webp"
-  className="py-4 md:py-20 flex flex-col gap-12 md:gap-24 "
+  className="py-4 flex flex-col gap-12 md:gap-24 "
 >
   <style is:global>
     :root {
@@ -24,11 +24,11 @@ import imgCrescent from "~/content/projects/b2tm-bloom/MV_GoBag_Mini5980.jpeg"
     }
   </style>
   <header
-    class="container mx-auto max-w-4xl prose prose-h1:text-6xl prose-a:no-underline prose-a:weight-medium px-4"
+    class="container mx-auto max-w-4xl prose prose-h1:text-6xl prose-a:no-underline prose-a:weight-medium px-4 py-20"
   >
     <a
       href="/"
-      class="text-xl font-triple block -mt-12 py-4 font-mono-slabs transition-transform hover:-translate-x-6"
+      class="text-xl font-triple block md:-mt-12 py-4 font-mono-slabs transition-transform hover:-translate-x-6"
     >
       &larr; @lachlanjc
     </a>
@@ -44,7 +44,9 @@ import imgCrescent from "~/content/projects/b2tm-bloom/MV_GoBag_Mini5980.jpeg"
     alt="Lachlan looking straight at camera over a turquoise backpack"
     class="max-h-screen mx-auto w-auto"
   />
-  <div class="grid grid-cols-2 container max-w-6xl px-4 gap-8 mx-auto -mt-12">
+  <div
+    class="grid lg:grid-cols-2 container max-w-6xl px-4 gap-8 mx-auto -mt-12"
+  >
     <Image src={imgBigFront} alt="Lachlan with bag slung over shoulder" />
     <Image src={imgBigSide} alt="Lachlan wearing backpack, side angle" />
   </div>
