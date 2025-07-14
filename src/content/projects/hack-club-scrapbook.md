@@ -4,7 +4,7 @@ cover: ./hack-club-scrapbook.webp
 coverAlt: "Masonry grid of social media posts under the yellow heading Hack Club Scrapbook"
 desc: "Designed & built a social network for then-isolated Hack Clubbers, still with hundreds of weekly actives today."
 color: "#f7ff00"
-url: "https://scrapbook.hackclub.com"
+url: "https://www.mux.com/blog/2020-the-summer-of-making-powered-by-hack-club"
 year: 2020
 feat: true
 ---

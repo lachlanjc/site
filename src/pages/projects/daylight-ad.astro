@@ -1,0 +1,44 @@
+---
+import Layout from "~/layouts/Layout.astro"
+---
+
+<Layout
+  title="Lachlan × Daylight Computer"
+  img="https://lachlanjc.com/projects/daylight-ad.jpg"
+  className="py-4 flex flex-col gap-12 md:gap-24"
+>
+  <style is:global>
+    :root {
+      --active-hue: #ffd856;
+    }
+  </style>
+  <article
+    class="container mx-auto max-w-4xl prose prose-h1:text-6xl prose-a:no-underline prose-a:weight-medium px-4"
+  >
+    <header class="md:pt-20 w-full">
+      <a
+        href="/"
+        class="text-xl font-triple block md:-mt-12 py-4 font-mono-slabs transition-transform hover:-translate-x-6"
+      >
+        &larr; @lachlanjc
+      </a>
+      <h1 id="baboon-to-the-moon-bloom" class="mb-0">
+        Lachlan × Daylight Computer
+      </h1>
+      <p class="text-xl text-balance">
+        Made a 1-minute ad for the
+        <a href="https://daylightcomputer.com">Daylight DC-1</a>,
+        directed&nbsp;by
+        <a href="https://vincentwoo.com/about/">Vincent Woo</a>. Summer 2024,
+        San Francsico.
+      </p>
+    </header>
+    <mux-player
+      playback-id="4rsy6qboDUiOlw9FIu95iG13hfH600NiPtcqoRawpvgA"
+      accent-color="#FFD856"
+      placeholder="https://lachlanjc.com/projects/daylight-ad.jpg"></mux-player>
+    <script>
+      import "@mux/mux-player"
+    </script>
+  </article>
+</Layout>
