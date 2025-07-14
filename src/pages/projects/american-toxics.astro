@@ -10,7 +10,7 @@ import imgMobileDetail from "~/content/projects/american-toxics/mobile-detail.jp
 import imgMobile from "~/content/projects/american-toxics/mobile.jpeg"
 
 import imgGroup1 from "~/content/projects/american-toxics/group-1.jpeg"
-import imgGroup2 from "~/content/projects/american-toxics/group-2.jpeg"
+import imgGroup4 from "~/content/projects/american-toxics/group-4.jpeg"
 
 import imgGuide from "~/content/projects/american-toxics/guide.jpeg"
 import imgPins from "~/content/projects/american-toxics/pins.jpeg"
@@ -42,7 +42,7 @@ import imgClusters from "~/content/projects/american-toxics/full-tsne-loose-half
         In spring 2025, I discovered that my preschool in my beautiful hometown of State College, PA was next to a toxic waste site. And 23% of Americans live within 3 miles of one of the 1,800+ toxic sites in the U.S. at which the federal government (slowly) manages cleanup. Meanwhile, relevant tools and documentation are rapidly disappearing from government websites.
       </p>
       <p>
-        I began by building <a href="https://americantoxics.com">americantoxics.com</a>, a website that maps every high-priority Superfund site. I used GPT-4.1 to summarize the documentation in government archives, and made a website with a clear map of everything. It’s <a href="https://github.com/lachlanjc/superfund">open&nbsp;source</a>.
+        I began by building <a href="https://americantoxics.com">americantoxics.com</a>, a website that maps every high-priority Superfund site. I used GPT-4.1 to summarize the documentation in government archives, and made a website with a clear map of every site. It’s <a href="https://github.com/lachlanjc/superfund">open&nbsp;source</a>.
       </p>
       <p>
         As part of my thesis project at NYU IMA, this project morphed into a full gallery installation. Across 8 pieces, spanning a 50-foot timeline, large-format prints, a satellite map, sound, a hanging mobile of laser-cut icons, a jar of toxic sludge, and more, I presented the scale of these sites nationwide and zoomed in on this story surrounding my preschool. The&nbsp;installation was exhibited at the ITP Spring Show 2025 in Downtown Brooklyn for thousands of visitors.
@@ -81,6 +81,7 @@ import imgClusters from "~/content/projects/american-toxics/full-tsne-loose-half
   >
     <h2>Centrepiece</h2>
     <p>
+      {<!-- prettier-ignore -->}
       A high-resolution satellite map of my hometown in Centre County, PA,
       centered on my preschool, is printed 40” square. A&nbsp;3” laser-cut map
       of Pennsylvania orients viewers. A&nbsp;laser-cut fence outlines the
@@ -88,14 +89,12 @@ import imgClusters from "~/content/projects/american-toxics/full-tsne-loose-half
       preschool in the early 2000s and the Superfund site, respectively. Pins
       guide viewers through an associated AR guide. In the background, a
       30-minute field recording from the site plays on loop. (Photos of the site
-      and field recording by <a href="https://alexisoltmer.com">
-        Alexis Oltmer
-      </a>.)
+      and field recording by <a href="https://alexisoltmer.com">Alexis Oltmer</a>.)
     </p>
   </div>
   <div class="grid md:grid-cols-2 px-4 md:px-8 gap-4 md:gap-8 mx-auto">
-    <Image src={imgFence} alt="Lachlan reaching into the bag pocket" />
-    <Image src={imgPins} alt="Lachlan with bag slung back" />
+    <Image src={imgFence} alt="Close-up of the fence around the site" />
+    <Image src={imgPins} alt="Close-up of the pins in the map, marking the preschool" />
   </div>
 
   <div
@@ -116,15 +115,15 @@ import imgClusters from "~/content/projects/american-toxics/full-tsne-loose-half
   <div class="grid md:grid-cols-2 px-4 md:px-8 gap-4 md:gap-8 mx-auto">
     <Image
       src={imgMobile}
-      alt="Lachlan wearing a backpack by one strap with flowers behind"
+      alt="Mobile hanging down with laser-cut circular plastic icons of contamination types"
     />
     <Image
       src={imgMobileDetail}
-      alt="Lachlan wearing a backpack by one strap with flowers behind"
+      alt="Close-up of mobile icons"
     />
     <Image
       src={imgGuide}
-      alt="Lachlan with bag slung over shoulder"
+      alt="Posterboard explaining the mobile iconography sitting below the mobile"
       class="md:col-span-2"
     />
   </div>
@@ -168,5 +167,6 @@ import imgClusters from "~/content/projects/american-toxics/full-tsne-loose-half
       class="max-h-screen mx-auto w-auto"
     />
   </div>
-  <Image src={imgGroup1} alt="Lachlan with bag slung over shoulder" />
+  <Image src={imgGroup1} alt="Lachlan demonstrating the project to 3 visitors, pointing at the map" />
+  <Image src={imgGroup4} alt="Group of visitors standing behind the mobile, map, and timeline" />
 </Layout>
