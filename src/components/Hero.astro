@@ -78,11 +78,11 @@ allProjects = allProjects.sort((a, b) => {
       <div class="md:float-right md:w-2/5 md:ml-2 pb-px flex flex-col md:flex-col-reverse gap-4 items-center" style="shape-outside: circle(50%);">
       <fieldset class="flex justify-center items-center gap-1 w-fit font-sans shadow-border rounded-full">
         <input type="radio" name="portrait" value="metal" id='portrait-metal' checked hidden />
-        <label for="portrait-metal" class="px-4 py-2 rounded-full transition-colors  hover:bg-white/50">
+        <label for="portrait-metal" class="px-4 py-2 rounded-full transition-colors hover:bg-(--active-bg)">
           Stainless
         </label>
         <input type="radio" name="portrait" value="wood" id='portrait-wood' hidden />
-        <label for='portrait-wood' class="px-4 py-2 rounded-full transition-colors hover:bg-white/50 weight-book">
+        <label for='portrait-wood' class="px-4 py-2 rounded-full transition-colors hover:bg-(--active-bg) weight-book">
           Wood
         </label>
       </fieldset>
@@ -103,7 +103,7 @@ allProjects = allProjects.sort((a, b) => {
         display: none;
       }
       input[name="portrait"]:checked + label {
-        background-color: hsl(0 0 100% / 65%);
+        background-color: var(--active-bg);
         box-shadow: var(--shadow-card);
       }
       fieldset:has(#portrait-wood:checked) ~ img[data-name="metal"] {
