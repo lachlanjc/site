@@ -4,7 +4,8 @@ import Socials from "./Socials.astro"
 import Project from "./Project.astro"
 import { getCollection, getEntry } from "astro:content"
 import { Image } from "astro:assets"
-import portrait from "../assets/portraits/berlin.jpg"
+import portraitWood from "../assets/portraits/woodshop.jpg"
+import portraitMetal from "../assets/portraits/mirror.jpg"
 
 let allProjects = await getCollection("projects")
 // sort by year, descending, then featured, true then false, then name
@@ -22,30 +23,35 @@ allProjects = allProjects.sort((a, b) => {
   <Color />
 
   <span
-    class="font-sans text-white bg-flame px-3 py-1 rounded-full -rotate-5 inline-block"
+    class="max-md:hidden font-sans text-white bg-(--active-accent) px-3 py-1 rounded-full rotate-5 inline-block float-right mt-6"
   >
     they/them
   </span>
+  <Socials />
   <h1
-    class="text-7xl lg:text-[6.7rem] weight-book text-(--active-hue) indent-[-.25ch] mt-2"
+    class="text-7xl lg:text-[6.7rem] weight-book text-(--active-hue) indent-[-.25ch] my-2"
   >
     Lachlan Campbell
   </h1>
+  <span
+    class="md:hidden font-sans text-white bg-(--active-accent) px-3 py-1 rounded-full rotate-5 inline-block"
+  >
+    they/them
+  </span>
+  {<!-- prettier-ignore -->}
   <p class="my-6 weight-book text-lg/7 md:text-xl/9 text-pretty">
     Worldwide web design engineer & artist.<br />
-    I recently graduated from NYU Tisch studying Interactive Media Arts.<br />
-    I’m soon moving to San Francisco to lead design engineering at <a
+    NYU Tisch Interactive Media Arts ’25.<br />
+    Design Engineering Lead at <a
       href="https://watershed.com"
       class="font-sans"
-    >
-      Watershed
-    </a>.
+    >Watershed</a>, San Francisco, CA.
   </p>
   <details
-    class="group mb-8 rounded-[24px] p-2 shadow-border open:shadow-none open:bg-lavender transition-colors grid"
+    class="group mb-8 rounded-[24px] p-2 shadow-border open:shadow-none open:backdrop-saturate-125 open:backdrop-brightness-125 transition-colors grid text-(--active-muted) open:text-(--active-text)"
   >
     <summary
-      class="font-sans text-(--active-muted) group-open:text-dark rounded-[24px] transition-colors cursor-pointer pl-1 flex items-center gap-2 font-bold outline-offset-8 group-open:outline-dark overflow-clip"
+      class="font-sans rounded-[24px] transition-colors cursor-pointer pl-1 flex items-center gap-2 font-bold outline-offset-8 group-open:outline-dark overflow-clip"
     >
       <svg
         class="-rotate-45 group-open:rotate-0 transition-transform"
@@ -68,32 +74,67 @@ allProjects = allProjects.sort((a, b) => {
       </svg>
       Full bio
     </summary>
-    <div class="grid gap-4 md:gap-6 p-2 md:grid-cols-[2fr_1fr]">
-      <p class="text-dark text-pretty font-mono-slabs weight-book">
-        I’m Lachlan Campbell (they/them, b. 2001), a design engineer & artist. I
-        began working on open source back in middle school in central PA. At
-        nonprofit  <a href="https://hackclub.com" class="font-sans">
-          Hack&nbsp;Club
-        </a> over 2017–20, I led storytelling & built programs for 30K+ teenagers
-        to start coding, and organized hackathons. In 2021, I joined <a
-          href="https://watershed.com"
-          class="font-sans"
-        >
-          Watershed
-        </a> (as #12) to help companies decarbonize, launching their website, a rebranding,
-        and starting a design system. Now in NYU Tisch’s undergraduate program in
-        Interactive Media Arts, I’m fabricating art with code & hardware between
-        New&nbsp;York & Berlin. After graduating in May, I’ll return to Watershed
-        to lead design engineering from San&nbsp;Francisco.
-      </p>
+    <div class="p-2 max-md:flex max-md:flex-col-reverse max-md:gap-6 md:pr-0">
+      <div class="md:float-right md:w-2/5 md:ml-2 pb-px flex flex-col md:flex-col-reverse gap-4 items-center" style="shape-outside: circle(50%);">
+      <fieldset class="flex justify-center items-center gap-1 w-fit font-sans shadow-border rounded-full">
+        <input type="radio" name="portrait" value="metal" id='portrait-metal' checked hidden />
+        <label for="portrait-metal" class="px-4 py-2 rounded-full transition-colors  hover:bg-white/50">
+          Stainless
+        </label>
+        <input type="radio" name="portrait" value="wood" id='portrait-wood' hidden />
+        <label for='portrait-wood' class="px-4 py-2 rounded-full transition-colors hover:bg-white/50 weight-book">
+          Wood
+        </label>
+      </fieldset>
       <Image
-        src={portrait}
-        alt="Selfie of Lachlan wearing a scarf outside"
-        class="w-full rounded-lg"
+        src={portraitMetal}
+        alt="Mirror selfie of Lachlan wearing a pink raincoat in a circular mirror seamlessly blending into stainless steel"
+        class="max-w-3/4 rounded-full"
+        data-name="metal"
       />
+      <Image
+        src={portraitWood}
+        alt="Mirror selfie of Lachlan in a green shirt in a woodshop"
+        class="max-w-3/4 rounded-full"
+        data-name="wood"
+      />
+      <style is:global>
+      img[data-name="wood"] {
+        display: none;
+      }
+      input[name="portrait"]:checked + label {
+        background-color: hsl(0 0 100% / 65%);
+        box-shadow: var(--shadow-card);
+      }
+      fieldset:has(#portrait-wood:checked) ~ img[data-name="metal"] {
+        display: none;
+      }
+      fieldset:has(#portrait-wood:checked) ~ img[data-name="wood"] {
+        display: block;
+      }
+      </style>
+    </div>
+
+    <p class="text-pretty font-mono-slabs weight-book">
+      I’m Lachlan Campbell (they/them, b. 2001), a design engineer & artist.
+      As&nbsp;a middle schooler in central PA, I began working on open source
+      projects, later attending & organizing hackathons in high school. From
+      2017–20, I led storytelling at the nonprofit <a
+        href="https://hackclub.com"
+        class="font-sans"
+      >Hack&nbsp;Club</a>, building programs for 30K+ teenagers to start coding.
+      In&nbsp;2021, I&nbsp;joined
+      <a href="https://watershed.com" class="font-sans">Watershed</a> to
+      help companies decarbonize, launching our website, designing our branding,
+      and developing our design system. I graduated from the NYU Tisch Interactive
+      Media Arts program in spring 2025, where I made environmental
+      storytelling with code, hardware, & physical fabrication in New York & Berlin.
+      This summer, I return to San Francisco to lead design engineering
+      at Watershed.
+    </p>
+
     </div>
   </details>
-  <Socials />
 </header>
 
 <section
@@ -102,9 +143,7 @@ allProjects = allProjects.sort((a, b) => {
   <nav
     class="flex justify-center items-center gap-1 w-fit font-sans shadow-border rounded-full"
   >
-    <span
-      class="text-(--active-hue) bg-white px-4 py-2 rounded-full inline-block shadow-card"
-    >
+    <span class="bg-white/65 px-4 py-2 rounded-full inline-block shadow-card">
       Projects
     </span>
     <a
@@ -124,7 +163,6 @@ allProjects = allProjects.sort((a, b) => {
     <input
       type="checkbox"
       switch
-      checked
       id="highlights"
       class="accent-(--active-hue)"
     />
@@ -169,12 +207,12 @@ allProjects = allProjects.sort((a, b) => {
 <footer
   class="max-md:mx-6 md:grid md:grid-cols-3 mt-12 md:mt-32 uppercase font-mono-slabs text-sm tracking-wide"
 >
-  <p class="px-4 md:px-6 py-2 border-2 max-md:rounded-t-xl md:rounded-l-full">
+  <p class="px-4 md:px-6 py-2 border-[1.5px] max-md:rounded-t-xl md:rounded-l-full">
     Typeset in <a href="https://abcdinamo.com/typefaces/oracle" target="_blank">
       ABC Oracle
     </a>
   </p>
-  <p class="px-4 md:px-6 py-2 max-md:border-x-2 md:border-y-2 text-center">
+  <p class="px-4 md:px-6 py-2 max-md:border-x-[1.5px] md:border-y-[1.5px] text-center">
     Built with <a
       href="https://astro.build"
       target="_blank"
@@ -184,7 +222,7 @@ allProjects = allProjects.sort((a, b) => {
     </a>
   </p>
   <p
-    class="px-4 md:px-6 py-2 border-2 max-md:rounded-b-xl md:rounded-r-full text-right"
+    class="px-4 md:px-6 py-2 border-[1.5px] max-md:rounded-b-xl md:rounded-r-full text-right"
   >
     Open source <a
       href="https://github.com/lachlanjc/site"

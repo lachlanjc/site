@@ -1,6 +1,6 @@
 ---
-const colors = ["flame", "brat", "revel", "indigo", "eggplant"];
-const defaultColor = "brat";
+const colors = ["nimbus", "rose", "flame", "acid", "element", "eggplant", "spill"];
+const defaultColor = "rose";
 ---
 
 <aside
@@ -11,7 +11,7 @@ const defaultColor = "brat";
     "text-xs mb-8 lg:mb-0"
   ]}
 >
-  <fieldset name="hue" class="flex gap-2" aria-labelledby="hue">
+  <fieldset name="hue" class="flex gap-2" aria-labelledby="hue" id="hue">
     <legend class="uppercase sr-only" id="hue">Hue</legend>
     {
       colors.map((color) => (
@@ -64,17 +64,34 @@ const defaultColor = "brat";
     return defaultColor;
   }
   const comps = {
+    nimbus: 1,
+    rose: 0.5,
     flame: 0.05,
-    brat: 0.25,
-    revel: 0.5,
-    indigo: 0.15,
-    eggplant: 0.35,
+    acid: 1,
+    element: 0.1,
+    eggplant:0.5,
+    spill: 0.35,
   };
+  const colors = Object.keys(comps)
   const doc = document.documentElement;
-  addEventListener("input", (event) => {
+  if (localStorage) {
+    const saved = localStorage.getItem('hue')
+    if (saved && colors.includes(saved)) {
+      updateColors(saved)
+    }
+  }
+  document.getElementById('hue').addEventListener("input", () => {
     const hue = getSelectedHue();
+    updateColors(hue)
+  })
+  document.getElementById('saturation').addEventListener("input", () => {
+    const hue = getSelectedHue();
+    updateColors(hue)
+  })
+  function updateColors(hue) {
+    localStorage.setItem('hue', hue)
     doc.style.setProperty("--active-hue", `var(--color-${hue})`);
-    const saturation = document.getElementById("saturation").valueAsNumber;
+    const saturation = hue === 'nimbus' ? 0 : document.getElementById("saturation").valueAsNumber;
     doc.style.setProperty("--active-saturation", saturation);
     const comp = comps[hue];
     doc.style.setProperty("--active-comp", comp);
@@ -83,5 +100,9 @@ const defaultColor = "brat";
     document
       .querySelector('meta[name="theme-color"]')
       .setAttribute("content", value);
-  });
+    // set accent
+    const accent = colors[(colors.indexOf(hue) % (colors.length - 1)) + 1]
+    console.log(colors.indexOf(hue), (colors.indexOf(hue) % (colors.length - 1)) + 1, colors.length)
+    doc.style.setProperty("--active-accent", `var(--color-${accent})`);
+  }
 </script>

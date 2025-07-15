@@ -47,6 +47,8 @@
 
   --color-flame: oklch(0.7 0.24 32.74);
   --color-brat: oklch(0.67 0.18 117.23);
+  --color-acid: oklch(0.81 0.15 115.61);
+  --color-spill: oklch(0.2 0.04 247.15);
   --color-light: #f4e1f9;
   --color-muted: #6870b0;
   --color-lavender: #a4aeff;
@@ -69,36 +71,40 @@
 @property --active-hue {
   syntax: "<string>";
   inherits: false;
-  initial-value: var(--color-brat);
+  initial-value: var(--color-rose);
 }
 @property --active-comp {
   syntax: "<number>";
   inherits: false;
-  initial-value: 0.5;
+  initial-value: 0.75;
 }
 @property --active-saturation {
   syntax: "<number>";
   inherits: false;
-  initial-value: 0.5;
+  initial-value: 0.25;
 }
 
 :root {
-  --color-candy: oklch(0.92 0.08 328.08);
+  --color-nimbus: oklch(0.52 0 0);
+  --color-rose: oklch(0.54 0.25 2.14);
+  --color-acid: oklch(0.81 0.15 115.61);
+  --color-spill: oklch(0.2 0.04 247.15);
   --color-flame: oklch(0.7 0.24 32.74);
+  --color-element: oklch(0.62 0.12 173.48);
   --color-brat: oklch(0.67 0.18 117.23);
-  --color-revel: oklch(0.37 0.1 110.52);
   --color-indigo: oklch(0.4 0.25 265.2);
   --color-eggplant: oklch(0.27 0.09 311.48);
 
   --active-hue: var(--color-brat);
   --active-saturation: 0.5;
   --active-bg: oklch(
-    from var(--active-hue) calc(l + 0.3) calc(var(--active-saturation) / 6) h
+    from var(--active-hue) calc(l + 0.4) calc(var(--active-saturation) / 8) h
   );
   --active-text: oklch(
     from var(--active-hue) calc(l / 1.25) calc(var(--active-comp) / 6) h
   );
   --active-muted: color-mix(in oklab, var(--active-text), lch(0 0 0 / 0.5) 50%);
+  --active-accent: var(--color-spill);
   /* COMING SOON
   @media (prefers-color-scheme: dark) {
     --active-hue: var(--color-flame);
