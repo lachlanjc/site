@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets"
+import Layout from "~/layouts/Layout.astro"
+import img from "~/content/projects/watershed-learning-hub.png"
+---
+
+<Layout
+  title="Watershed Learning Hub"
+  img="https://lachlanjc.com/projects/watershed-learning-hub.png"
+  className="prose prose-h1:text-6xl prose-a:no-underline prose-a:weight-medium [&_figcaption]:-mt-6 [&_figcaption]:color-inherit prose-img:not:first-of-type:rounded-lg prose-p:first-of-type:max-w-2xl prose-p:first-of-type:-mt-8 prose-p:first-of-type:text-xl container py-4 md:py-20 px-4 mx-auto max-w-2xl"
+>
+  <style is:global>
+    :root {
+      --active-hue: #296cff;
+    }
+  </style>
+
+  <a
+    href="/"
+    class="text-sm font-triple block max-md:mt-20 transition-transform hover:-translate-x-6"
+  >
+    &larr; @lachlanjc
+  </a>
+
+  <h1>Watershed Learning&nbsp;Hub</h1><p>Case study coming soon.</p>
+
+  <Image
+    src={img}
+    alt="Watershed Learning Hub screenshot"
+    class="rounded-lg mt-8"
+  />
+</Layout>
