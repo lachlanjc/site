@@ -5,6 +5,6 @@ cover: ./supercons.png
 coverAlt: "Banner with colorful friendly icons"
 url: "https://supercons.vercel.app"
 color: "#622aff"
-year: 2026
+year: 2026.0
 feat: true
 ---

@@ -1,11 +1,12 @@
 ---
-import type { CollectionEntry } from "astro:content"
+import type { CollectionEntry } from "astro:content";
 interface Props {
-	project: CollectionEntry<"projects">
+  project: CollectionEntry<"projects">;
 }
 
-const { project } = Astro.props
-import { Picture } from "astro:assets"
+const { project } = Astro.props;
+import { Picture } from "astro:assets";
+const displayYear = Math.floor(project.data.year);
 ---
 
 <a
@@ -34,7 +35,7 @@ import { Picture } from "astro:assets"
   />
   <div class="p-4 @sm:p-6 @xs:-mt-1">
     <span class="text-sm float-right mt-1 text-(--active-muted)">
-      {project.data.year}
+      {displayYear}
     </span>
     <h2 class={`text-xl inline text-(--active-hue) font-triple`}>
       {project.data.name}
