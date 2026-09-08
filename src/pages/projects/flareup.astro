@@ -1,0 +1,82 @@
+---
+import Layout from "~/layouts/Layout.astro"
+import { Image } from "astro:assets"
+
+import imgRoom from "~/content/projects/flareup/Arthur_Pohlit_NYU_1014.jpg"
+import imgRoom2 from "~/content/projects/flareup/Arthur_Pohlit_NYU_1007.jpg"
+import imgExtraction from "~/content/projects/flareup/Arthur_Pohlit_NYU_1591.jpg"
+import imgMap from "~/content/projects/flareup/Arthur_Pohlit_NYU_1585.jpg"
+import img4Up from "~/content/projects/flareup/Arthur_Pohlit_NYU_1582.jpg"
+
+import imgPortrait1 from "~/content/projects/flareup/Arthur_Pohlit_NYU_0982.jpg"
+---
+
+<Layout
+  title="Flareup"
+  img="https://lachlanjc.com/projects/flareup.webp"
+  className="flex flex-col gap-12 md:gap-24"
+>
+  <style is:global>
+    :root {
+      --active-hue: #e59406;
+    }
+  </style>
+
+  <section class="grid md:grid-cols-2">
+    <header
+      class="pt-4 pb-8 md:py-20 container mx-auto max-w-xl px-4 prose prose-h1:text-6xl prose-a:no-underline prose-a:weight-medium"
+    >
+      <a
+        href="/"
+        class="text-xl font-triple block md:-mt-12 py-4 font-mono-slabs transition-transform hover:-translate-x-6"
+      >
+        &larr; @lachlanjc
+      </a>
+      <h1 class="mb-0">Flareup</h1>
+      <p>
+        U.S. Democrats legalized the export of American fossil gas overseas in
+        2017, beginning a massive industrial buildout of export terminals, along
+        Cancer Alley in the Southeast but increasingly up the East Coast as
+        well. The export of American gas increases energy prices for Americans,
+        increases pollution in poor communities, and profits flow to only a few
+        corporations. New research reveals the carbon impact of exporting gas is
+        worse than burning coal, but the gas buildout is sold as a “climate
+        solution” for our allies.
+      </p>
+      <p>
+        While studying abroad in Berlin in fall 2025, I researched the results
+        of the Ukraine war on European energy supplies and began unraveling this
+        story. I created an interactive projection show, displayed for the
+        <strong style="color: #ec008c">Fingerfertigkeiten</strong> opening in the
+        St. Agnes gallery in Berlin in December 2023. Thank you to Arthur Pohlit
+        for the show photography.
+      </p>
+      <p>
+        <a href="https://flareup.vercel.app">
+          Explore the interactive (desktop only) &rarr;
+        </a>
+      </p>
+    </header>
+    <Image
+      src={imgPortrait1}
+      alt="Whole project"
+      class="max-h-screen w-auto md:ml-auto"
+    />
+  </section>
+
+  <Image
+    src={imgRoom}
+    alt="Wide shot of Lachlan in front of projection of map of U.S. L.N.G. terminals"
+  />
+
+  <Image
+    src={imgMap}
+    alt="Close-up of map with caption: I grew up in a small college town in the Northeastern U.S."
+  />
+  <Image src={imgExtraction} alt="Extraction banner" />
+  <Image src={img4Up} alt="Grid of L.N.G. tankers" />
+  <Image
+    src={imgRoom2}
+    alt="Wide shot with fracking infrastructure photos projected"
+  />
+</Layout>
