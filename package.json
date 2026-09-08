@@ -1,22 +1,25 @@
 {
-  "name": "site-experiments",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^4.2.6",
-    "@mux/mux-player": "^3.4.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.7",
-    "@vercel/analytics": "^1.5.0",
-    "astro": "^5.7.13",
-    "prettier": "^3.5.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "tailwindcss": "^4.1.7"
-  }
+	"name": "@lachlanjc/site",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"fmt": "biome format --write .",
+		"fmt:check": "biome check ."
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^4.2.6",
+		"@mux/mux-player": "^3.4.0",
+		"@tailwindcss/typography": "^0.5.16",
+		"@tailwindcss/vite": "^4.1.7",
+		"@vercel/analytics": "^1.5.0",
+		"astro": "^5.7.13",
+		"tailwindcss": "^4.1.7"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.12"
+	}
 }
