@@ -10,7 +10,7 @@ const displayYear = Math.floor(project.data.year);
 ---
 
 <a
-  id={project.slug}
+  id={project.id}
   href={project.data.url}
   class:list={[
     `block relative @container overflow-hidden outline-offset-4`,
@@ -19,7 +19,7 @@ const displayYear = Math.floor(project.data.year);
       : "bg-white/20 hover:bg-white/40 border-dashed border-b-1 md:border-1 border-(--active-muted)",
     `transition-all hover:-translate-y-1 rounded-edges md:visible-masonry`,
   ]}
-  style={`view-transition-name: ${project.slug}; ${project.data.color ? `outline-color: ${project.data.color};` : ""}`}
+  style={`view-transition-name: ${project.id}; ${project.data.color ? `outline-color: ${project.data.color};` : ""}`}
   data-featured={project.data.feat}
   hidden={!project.data.feat}
 >

@@ -2,6 +2,9 @@
 	"name": "@lachlanjc/site",
 	"type": "module",
 	"version": "0.0.1",
+	"engines": {
+		"node": ">=22.23.4"
+	},
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
@@ -11,13 +14,13 @@
 		"fmt:check": "biome check ."
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^4.2.6",
+		"@astrojs/mdx": "8.1.6",
 		"@mux/mux-player": "^3.4.0",
 		"@tailwindcss/typography": "^0.5.16",
-		"@tailwindcss/vite": "^4.1.7",
+		"@tailwindcss/vite": "^4.3.5",
 		"@vercel/analytics": "^1.5.0",
-		"astro": "^5.7.13",
-		"tailwindcss": "^4.1.7"
+		"astro": "7.4.12",
+		"tailwindcss": "^4.3.5"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.12"
