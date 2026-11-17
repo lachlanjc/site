@@ -1,7 +1,7 @@
 ---
 name: "Chlobe"
-desc: "A 15KB React library for cobe-style choropleth globes, visualizing country-level data with labels, tooltips, & color ramps."
-cover: ./chlobe.webp
+desc: "React library for country data visualization on 3D globes. Super fast (15kb), customizable, open source."
+cover: ./chlobe.png
 coverAlt: "Dotted choropleth globe beside the word chlobe in mint green on black"
 url: "https://chlobe.lachlanjc.com"
 color: "#1d4ed8"
